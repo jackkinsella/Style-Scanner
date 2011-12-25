@@ -39,9 +39,14 @@ module Style
     context "broken links"
     context "unclosed parenthesis"
     context "uncapitalized starting lines"
+    context "forgotten full stop"
     context "repeated words" do 
       it "should remove words repeated in a row" do
         should_rewrite("I went went to the shop", "I went to the shop")
+      end
+      it "removes words repeated in a row where one is capitalized" do
+        should_rewrite("I went Went to the shop", "I went to the shop")
+        should_rewrite("I Went went to the shop", "I went to the shop")
       end
     end
     context "overused words"

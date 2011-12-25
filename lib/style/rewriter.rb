@@ -15,9 +15,10 @@ module Style
     end
 
     def rewrite
-      remove_words
+      remove_useless_words
       substitute_words
       remove_adverbs
+      remove_consecutively_repeated_words
       remove_double_spaces
       remove_white_space_around_full_stops
       finished_text
@@ -25,9 +26,29 @@ module Style
 
     private
 
+    def remove(old_word)
+      sub(old_word, "")
+    end
+
+    def sub(old_word, new_word)
+      @finished_text.gsub!(/\b#{old_word}\b/, new_word)
+    end
+
+    def remove_consecutively_repeated_words
+      consecutively_repeated_words = @input_text.scan(repeated_word_regex).flatten
+      consecutively_repeated_words.each do |word|
+
+        @finished_text.sub!(/\b#{word}\b\s+\b#{word}\b/, "#{word}")
+      end 
+    end
+
+    def repeated_word_regex
+      /\b(\w+)\b\s+\1/
+    end
+
     def remove_adverbs
       part_of_speech("RB").each do |word|
-        @finished_text.gsub!(/\b#{word}\b/, "")
+        remove word
       end
     end
 
@@ -52,15 +73,15 @@ module Style
       @finished_text.gsub!(/\s+/, " ")
     end
 
-    def remove_words
-      WORD_REMOVALS.each do |offender|
-        @finished_text.gsub!(/\b#{offender.to_s}\b/, "")
+    def remove_useless_words
+      WORD_REMOVALS.each do |useless_word|
+        remove useless_word
       end
     end
 
     def substitute_words
       WORD_SUBSTITUTIONS.each do |offender, replacement|
-        @finished_text.gsub!(/\b#{offender.to_s}\b/, replacement.to_s)
+        sub offender.to_s, replacement.to_s
       end
     end
 
