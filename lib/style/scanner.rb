@@ -108,7 +108,7 @@ module Style
 
     def split_into_sentences
       tokenizer = Punkt::SentenceTokenizer.new(input_text)
-      tokenizer.sentences_from_text(input_text, :output => :sentences_text)
+      tokenizer.sentences_from_text(input_text, :output => :sentences_text).map {|text| Sentence.new(text)}
     end
 
     def substitute_words

@@ -25,7 +25,9 @@ module Style
       it "splits into sentences correctly" do
         sentences = Scanner.new(text).sentences
         sentences.size.should == 2
-        sentences[1].split.first.should == "I"
+        last_sentence = sentences[1]
+        last_sentence.class.should == Sentence
+        last_sentence.text.split.first.should == "I"
       end
     end
 
