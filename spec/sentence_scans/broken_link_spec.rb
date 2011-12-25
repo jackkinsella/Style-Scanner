@@ -1,7 +1,7 @@
 require "spec_helper"
 module Style
   module SentenceScans
-    describe BrokenLinkScan do
+    describe BrokenLink do
       let(:working_link) { Sentence.new("View our website: http://www.google.com/")} 
       let(:broken_link) { Sentence.new("View our website: http://www.xyasdfasdfsdfas.com/")}
 

@@ -1,7 +1,7 @@
 require "spec_helper"
 module Style
   module SentenceScans
-    describe BrokenLinkScan do
+    describe BrokenLink do
       let(:utilize) {Sentence.new("We will utilize these apples.")}
       let(:utilize_uppercase) {Sentence.new("Our Paper Utilizes Stuff")}
       context "#scan" do

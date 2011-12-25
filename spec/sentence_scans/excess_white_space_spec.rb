@@ -1,7 +1,7 @@
 require "spec_helper"
 module Style
   module SentenceScans
-    describe ExcessWhiteSpaceScan do
+    describe ExcessWhiteSpace do
       let(:space_before_stop) {Sentence.new "I ran ."}
       let(:double_spaces) {Sentence.new "It was a  place."}
       context "#scan" do

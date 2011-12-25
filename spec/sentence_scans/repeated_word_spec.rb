@@ -1,7 +1,7 @@
 require "spec_helper"
 module Style
   module SentenceScans
-    describe RepeatedWordScan do
+    describe RepeatedWord do
       let(:consecutive_repeated_words) {Sentence.new "I went went to the shop"}
       let(:consecutive_repeated_words_capitalized1) {Sentence.new "I went Went to the shop"}
       let(:consecutive_repeated_words_capitalized) {Sentence.new "I Went went to the shop"}

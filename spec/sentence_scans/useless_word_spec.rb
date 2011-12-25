@@ -1,7 +1,7 @@
 require "spec_helper"
 module Style
   module SentenceScans
-    describe UselessWordScan do
+    describe UselessWord do
       let(:very) {Sentence.new "It was a very good idea."}
 
       context "#scan" do
