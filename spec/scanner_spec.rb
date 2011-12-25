@@ -18,6 +18,17 @@ module Style
       subject.alerts(alert_type).size.should == 0
     end
 
+    context "sentences" do
+      let(:text) {
+       "My name is Jack. I am the creator of this program." 
+      }
+      it "splits into sentences correctly" do
+        sentences = Scanner.new(text).sentences
+        sentences.size.should == 2
+        sentences[1].split.first.should == "I"
+      end
+    end
+
     context "ugly word" do
       it "recommends you replaces utilize with use" do
         should_alert "We will utilize these apples.", UglyWord, "We will use these apples."

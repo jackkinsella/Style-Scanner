@@ -6,3 +6,4 @@ gem 'rspec'
 gem "ruby-debug19"
 gem "log_buddy"
 gem "looksee"
+gem "punkt-segmenter"

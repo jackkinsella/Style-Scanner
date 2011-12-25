@@ -2,6 +2,8 @@
 
 # external dependencies
 require "log_buddy"
+require "punkt-segmenter"
+require "net/http"
 
 #external setups
 LogBuddy.init({
