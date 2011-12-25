@@ -1,6 +1,6 @@
 module Style
   module SentenceScans
-    class AdverbScan < Base
+    class Adverb < Base
       def scan
         part_of_speech("RB").each do |word|
           suggested_sentence = remove(word)

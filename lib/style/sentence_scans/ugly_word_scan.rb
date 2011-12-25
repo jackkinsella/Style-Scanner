@@ -1,6 +1,6 @@
 module Style
   module SentenceScans
-    class UglyWordScan < Base
+    class UglyWord < Base
       UGLY_WORDs= {"utilize" => "use"}
       def scan
         UGLY_WORDS.keys.each do |offender|

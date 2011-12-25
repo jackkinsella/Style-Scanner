@@ -1,6 +1,6 @@
 module Style
   module SentenceScans
-    class ExcessWhiteSpaceScan < Base 
+    class ExcessWhiteSpace < Base 
       def scan
         create_alert suggested_sentence if sentence.gsub!(/\s+/, " ")
       end
