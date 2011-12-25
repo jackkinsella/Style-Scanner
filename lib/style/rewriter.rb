@@ -9,9 +9,10 @@ module Style
     attr_accessor :finished_text
 
     def initialize(input_text)
-      @input_text = input_text 
+      @input_text = input_text
       @finished_text = input_text
       @tokenized_text = tokenize_text
+      @alerts = []
     end
 
     def rewrite
@@ -23,8 +24,15 @@ module Style
       remove_white_space_around_full_stops
       finished_text
     end
+    
+    def alerts(type=false)
+      type ? alerts.select {|alert| alert.instance_of(type)} : @alerts
+    end
 
     private
+
+    def add_alerts(alert)
+    end
 
     def remove(old_word)
       sub(old_word, "")
@@ -35,10 +43,14 @@ module Style
     end
 
     def remove_consecutively_repeated_words
-      consecutively_repeated_words = @input_text.scan(repeated_word_regex).flatten
+      consecutively_repeated_words = input_text.downcase.scan(repeated_word_regex).flatten
+      # we need capitalization permutations, ordered by most likely
       consecutively_repeated_words.each do |word|
-
-        @finished_text.sub!(/\b#{word}\b\s+\b#{word}\b/, "#{word}")
+        # d word
+        @finished_text.sub!(/\b#{word}\b\s+\b#{word}\b/, "#{word}") ||
+        @finished_text.sub!(/\b#{word.capitalize}\b\s+\b#{word.capitalize}\b/, "#{word}") ||
+        @finished_text.sub!(/\b#{word.capitalize}\b\s+\b#{word}\b/, "#{word}") ||
+        @finished_text.sub!(/\b#{word}\b\s+\b#{word.capitalize}\b/, "#{word}")
       end 
     end
 

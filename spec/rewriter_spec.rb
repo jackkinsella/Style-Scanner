@@ -7,13 +7,23 @@ module Style
       subject.rewrite.should == expected_text 
     end
 
+    def should_alert(input_text, alert_type)
+      subject = Rewriter.new(input_text)
+      subject.alerts(alert_type).size.should == 1
+    end
+
+    def should_not_alert(input_text, alert_type)
+      subject.alerts(alert_type).size.should == 0
+    end
+
     context "replacements" do
       it "recommends you replaces utilize with use" do
         should_rewrite "We will utilize these apples.", "We will use these apples."
       end
-      it "handles uppercase" 
+      it "handles uppercase" do
+        should_rewrite "Our Paper Utilizes Stuff", "Our Paper Uses Stuff"
+      end
     end
-
 
     context "white space" do
       it "removes spaces before full stops" do
@@ -36,7 +46,14 @@ module Style
       end
     end
 
-    context "broken links"
+    context "broken links" do 
+      it "approves working links" do
+        should_not_alert("View our website: http://www.google.com/", BrokenLink)
+      end
+      it "flags broken links" do
+        should_alert("View our website: http://www.xyasdfasdfsdfas.com/", BrokenLink)
+      end
+    end
     context "unclosed parenthesis"
     context "uncapitalized starting lines"
     context "forgotten full stop"
@@ -51,7 +68,6 @@ module Style
     end
     context "overused words"
     context "long words"
-
     context "passive tense" do
     end
 
