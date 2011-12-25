@@ -1,7 +1,8 @@
 module Style
   module Alerts
-    class Base
-
+    class RepeatedWord < Base
+          
     end
   end
 end
+

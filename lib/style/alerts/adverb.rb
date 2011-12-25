@@ -1,7 +1,7 @@
 module Style
   module Alerts
-    class Base
-
+    class Adverb < Base
+          
     end
   end
 end

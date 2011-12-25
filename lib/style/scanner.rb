@@ -1,9 +1,10 @@
 module Style
   class TokenizerNotWorking < StandardError
   end
-  class Rewriter 
+  class Scanner 
     WORD_SUBSTITUTIONS = [[:utilize, :use]]
-    WORD_REMOVALS = ["very"]
+    USELESS_WORDS = ["very"]
+    REPEATED_WORD_REGEX = /\b(\w+)\b\s+\1/
 
     attr_reader :input_text, :tokenized_text
     attr_accessor :finished_text
@@ -15,16 +16,16 @@ module Style
       @alerts = []
     end
 
-    def rewrite
-      remove_useless_words
+    def scan 
+      useless_words
       substitute_words
-      remove_adverbs
-      remove_consecutively_repeated_words
-      remove_double_spaces
-      remove_white_space_around_full_stops
+      adverbs_presence
+      consecutively_repeated_words
+      excess_white_spacing
+      white_space_around_full_stops
       finished_text
     end
-    
+
     def alerts(type=false)
       type ? alerts.select {|alert| alert.instance_of(type)} : @alerts
     end
@@ -42,29 +43,26 @@ module Style
       @finished_text.gsub!(/\b#{old_word}\b/, new_word)
     end
 
-    def remove_consecutively_repeated_words
-      consecutively_repeated_words = input_text.downcase.scan(repeated_word_regex).flatten
+    def consecutively_repeated_words
+      consecutively_repeated_words = input_text.downcase.scan(REPEATED_WORD_REGEX).flatten
       # we need capitalization permutations, ordered by most likely
       consecutively_repeated_words.each do |word|
         # d word
         @finished_text.sub!(/\b#{word}\b\s+\b#{word}\b/, "#{word}") ||
-        @finished_text.sub!(/\b#{word.capitalize}\b\s+\b#{word.capitalize}\b/, "#{word}") ||
-        @finished_text.sub!(/\b#{word.capitalize}\b\s+\b#{word}\b/, "#{word}") ||
-        @finished_text.sub!(/\b#{word}\b\s+\b#{word.capitalize}\b/, "#{word}")
+          @finished_text.sub!(/\b#{word.capitalize}\b\s+\b#{word.capitalize}\b/, "#{word}") ||
+          @finished_text.sub!(/\b#{word.capitalize}\b\s+\b#{word}\b/, "#{word}") ||
+          @finished_text.sub!(/\b#{word}\b\s+\b#{word.capitalize}\b/, "#{word}")
       end 
     end
 
-    def repeated_word_regex
-      /\b(\w+)\b\s+\1/
-    end
 
-    def remove_adverbs
+    def adverbs_presence 
       part_of_speech("RB").each do |word|
         remove word
       end
     end
 
-    def remove_white_space_around_full_stops
+    def white_space_around_full_stops
       @finished_text.gsub!(/\s+\./, ".")
     end
 
@@ -81,12 +79,12 @@ module Style
       end
     end
 
-    def remove_double_spaces
+    def excess_white_spacing
       @finished_text.gsub!(/\s+/, " ")
     end
 
-    def remove_useless_words
-      WORD_REMOVALS.each do |useless_word|
+    def useless_words
+      USELESS_WORDS.each do |useless_word|
         remove useless_word
       end
     end

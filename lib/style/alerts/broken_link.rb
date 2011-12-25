@@ -1,5 +1,5 @@
 module Style
-  module Alert
+  module Alerts
     class BrokenLink < Base
           
     end
