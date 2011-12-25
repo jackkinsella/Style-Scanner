@@ -7,8 +7,8 @@ module Style
       it "has a reference to a sentence" do
         subject.sentence.class == Sentence
       end
-      it "knows its offending word" do
-        subject.offending_word.should == "really"
+      it "knows its offending text" do
+        subject.offending_text.should == "really"
       end
     end
   end
