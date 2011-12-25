@@ -6,6 +6,7 @@ module Style
 
     def should_alert(input_text, alert_type, correct_sentence = nil)
       subject = Scanner.new(input_text)
+      subject.scan
       alerts = subject.alerts(alert_type)
       alerts.size.should == 1
       alerts[0].suggestion.should == correct_sentence if correct_sentence 
@@ -13,6 +14,7 @@ module Style
 
     def should_not_alert(input_text, alert_type)
       subject = Scanner.new(input_text)
+      subject.scan
       subject.alerts(alert_type).size.should == 0
     end
 
@@ -23,8 +25,10 @@ module Style
       it "handles uppercase" do
         should_alert "Our Paper Utilizes Stuff", UglyWord, "Our Paper Uses Stuff"
       end
+    end
+    context "useless words" do
       it "removes the word 'very'" do
-        should_alert "It was a very good idea.", UglyWord, "It was a good idea."
+        should_alert "It was a very good idea.", UselessWord, "It was a good idea."
       end
     end
 

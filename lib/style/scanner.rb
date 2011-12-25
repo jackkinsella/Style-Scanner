@@ -1,7 +1,8 @@
 module Style
-  class TokenizerNotWorking < StandardError
-  end
   class Scanner 
+  include Errors
+  include Alerts
+
     WORD_SUBSTITUTIONS = [[:utilize, :use]]
     USELESS_WORDS = ["very"]
     REPEATED_WORD_REGEX = /\b(\w+)\b\s+\1/
@@ -27,12 +28,13 @@ module Style
     end
 
     def alerts(type=false)
-      type ? alerts.select {|alert| alert.instance_of(type)} : @alerts
+      type ? @alerts.select {|alert| alert.kind_of? type} : @alerts
     end
 
     private
 
-    def add_alerts(alert)
+    def add_alert(alert_type, corrected_sentence)
+      @alerts << alert_type.new(corrected_sentence)
     end
 
     def remove(old_word)
@@ -54,7 +56,6 @@ module Style
           @finished_text.sub!(/\b#{word}\b\s+\b#{word.capitalize}\b/, "#{word}")
       end 
     end
-
 
     def adverbs_presence 
       part_of_speech("RB").each do |word|
@@ -85,7 +86,9 @@ module Style
 
     def useless_words
       USELESS_WORDS.each do |useless_word|
-        remove useless_word
+         suggested_sentence = remove(useless_word)
+         # don't add an alert is nothing found
+         add_alert(UselessWord, suggested_sentence) if suggested_sentence
       end
     end
 
