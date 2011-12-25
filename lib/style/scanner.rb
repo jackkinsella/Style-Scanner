@@ -30,14 +30,14 @@ module Style
       finished_text
     end
 
-    def alerts(type=false)
-      type ? @alerts.select {|alert| alert.kind_of? type} : @alerts
+    def find_sentence(text)
+      @sentences.find {|sentence| sentence.text == text}
     end
 
     private
 
     def broken_links
-      links = input_text.scan(/(http\w+|www\w+)/)
+      links = input_text.scan(URL_REGEX)
       links.each do |url|
         begin
         Net::HTTP.get_response(URI.parse(url))
