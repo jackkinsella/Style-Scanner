@@ -2,7 +2,9 @@ module Style
   module SentenceScans
     class UglyWord < Base
 
-      UGLY_WORDS= {"utilize" => "use"}
+      STEMS = {"utilize" => "use"}
+      CAPITALIZED_UGLY_WORDS = Hash[STEMS.map {|k,v| [k.capitalize, v.capitalize]}] 
+      UGLY_WORDS = @@UGLY_WORDS ||= STEMS.update(CAPITALIZED_UGLY_WORDS)
 
       def scan
         UGLY_WORDS.keys.each do |offender|
