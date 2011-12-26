@@ -3,8 +3,7 @@ module Style
     class Adverb < Base
       def scan
         part_of_speech("RB").each do |word|
-          suggested_sentence = remove(word)
-          create_alert suggested_sentence
+          create_alert word 
         end
       end
     end

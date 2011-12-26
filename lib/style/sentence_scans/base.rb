@@ -11,14 +11,6 @@ module Style
 
       private
 
-      def remove(old_word)
-        sub(old_word, "")
-      end
-
-      def sub(old_word, new_word)
-        sentence.gsub!(/\b#{old_word}\b/, new_word)
-      end
-
       def capitalized_word_pairs
         # ruby searches for WORD_PAIRS on base class without the following line
         word_pairs = self.class::WORD_PAIRS
