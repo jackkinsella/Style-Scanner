@@ -1,7 +1,8 @@
 module Style
   module SentenceScans
     class RepeatedWord < Base
-      def scan(sentence)
+
+      def scan
         consecutively_repeated_words = sentence.downcase.scan(REPEATED_WORD_REGEX).flatten
         # we need capitalization permutations, ordered by most likely
         consecutively_repeated_words.each do |word|
@@ -13,6 +14,7 @@ module Style
           create_alert suggested_sentence
         end 
       end
+
     end
   end
 end

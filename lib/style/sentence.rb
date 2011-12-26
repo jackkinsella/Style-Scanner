@@ -2,7 +2,7 @@ module Style
   class Sentence 
     
     extend Forwardable
-    def_delegators :@text, :gsub!, :match
+    def_delegators :copy_of_text, :gsub!, :match, :scan, :downcase, :sub!
 
     attr_reader :alerts, :text
     
@@ -21,6 +21,13 @@ module Style
 
     def to_s
       "Sentence Obj: text: #{text} alerts: #{alerts}"
+    end
+
+    private
+
+    # we don't want to modify the original text
+    def copy_of_text
+      text.dup
     end
   end
 end

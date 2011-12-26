@@ -5,6 +5,10 @@ module Style
 
       attr_reader :sentence
 
+      def initialize(sentence)
+        @sentence = sentence
+      end
+
       private
 
       def remove(old_word)
