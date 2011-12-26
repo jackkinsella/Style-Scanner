@@ -11,7 +11,7 @@ module Style
 
       private
 
-      def capitalized_word_pairs
+      def word_pairs
         # ruby searches for WORD_PAIRS on base class without the following line
         word_pairs = self.class::WORD_PAIRS
       end
@@ -30,7 +30,7 @@ module Style
       end
 
       def replacement_word(offending_word)
-        capitalized_word_pairs[offending_word]
+        word_pairs[offending_word]
       end
 
       # We retokenize for the text case where no overall scanner is prepared

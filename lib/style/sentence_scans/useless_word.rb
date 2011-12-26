@@ -2,7 +2,7 @@ module Style
   module SentenceScans
     class UselessWord < Base
 
-      USELESS_WORDS = ["very", "pretty"]
+      USELESS_WORDS = ["very", "pretty" "fairly", "really"]
 
       def scan
         USELESS_WORDS.each do |useless_word|
