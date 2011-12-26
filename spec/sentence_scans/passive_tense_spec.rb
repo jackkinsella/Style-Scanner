@@ -16,18 +16,18 @@ module Style
 
             context "#scan" do
                 it "catches all passives" do
-                    should_alert present, Alerts::Passive
-                    should_alert simple_past, Alerts::Passive
-                    should_alert future, Alerts::Passive
-                    should_alert hilfsverben, Alerts::Passive
-                    should_alert present_perfect, Alerts::Passive
+                    should_alert present, Alerts::PassiveTense
+                    should_alert simple_past, Alerts::PassiveTense
+                    should_alert future, Alerts::PassiveTense
+                    should_alert hilfsverben, Alerts::PassiveTense
+                    should_alert present_perfect, Alerts::PassiveTense
                 end
                 it "does not catch any actives" do
-                    should_not_alert present, Alerts::Passive
-                    should_not_alert simple_past, Alerts::Passive
-                    should_not_alert future, Alerts::Passive
-                    should_not_alert hilfsverben, Alerts::Passive
-                    should_not_alert present_perfect, Alerts::Passive
+                    should_not_alert present, Alerts::PassiveTense
+                    should_not_alert simple_past, Alerts::PassiveTense
+                    should_not_alert future, Alerts::PassiveTense
+                    should_not_alert hilfsverben, Alerts::PassiveTense
+                    should_not_alert present_perfect, Alerts::PassiveTense
 
                 end
             end

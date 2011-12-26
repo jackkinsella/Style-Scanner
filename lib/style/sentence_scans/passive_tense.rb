@@ -1,6 +1,6 @@
 module Style
   module SentenceScans 
-    class ExcessWhiteSpace < Base
+    class PassiveTense < Base
           
     end
   end
