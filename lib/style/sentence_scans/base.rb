@@ -26,7 +26,7 @@ module Style
         word_pairs.update(capitalized_versions)
       end
 
-      def replacement(offending_word)
+      def replacement_word(offending_word)
         capitalized_word_pairs[offending_word]
       end
 

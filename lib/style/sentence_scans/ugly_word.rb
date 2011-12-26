@@ -2,22 +2,15 @@ module Style
   module SentenceScans
     class UglyWord < Base
 
-      STEMS = {"utilize" => "use", "necessitate" => "require", "leverage" => "use", "aforementioned" => "previous",
+      WORD_PAIRS= {"utilize" => "use", "necessitate" => "require", "leverage" => "use", "aforementioned" => "previous",
       "transpire" => "happen", "thusly" => "thus", "whilst" => "while", "tackle" => "solve"}
 
-      CAPITALIZED_UGLY_WORDS = Hash[STEMS.map {|k,v| [k.capitalize, v.capitalize]}] 
-      UGLY_WORDS = @@UGLY_WORDS ||= STEMS.update(CAPITALIZED_UGLY_WORDS)
-
       def scan
-        UGLY_WORDS.keys.each do |offender|
-          suggested_sentence = sub(offender, replacement(offender))
-          create_alert(suggested_sentence) if suggested_sentence
+        capitalized_word_pairs.keys.each do |offender|
+          create_alert(replacement(offender)) if sentence.contains?(offender) 
         end
       end
 
-      def replacement(offending_word)
-        UGLY_WORDS[offending_word]
-      end
     end
   end
 end
