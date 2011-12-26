@@ -2,7 +2,9 @@ module Style
   module SentenceScans
     class UglyWord < Base
 
-      STEMS = {"utilize" => "use"}
+      STEMS = {"utilize" => "use", "necessitate" => "require", "leverage" => "use", "aforementioned" => "previous",
+      "transpire" => "happen", "thusly" => "thus", "whilst" => "while", "tackle" => "solve"}
+
       CAPITALIZED_UGLY_WORDS = Hash[STEMS.map {|k,v| [k.capitalize, v.capitalize]}] 
       UGLY_WORDS = @@UGLY_WORDS ||= STEMS.update(CAPITALIZED_UGLY_WORDS)
 

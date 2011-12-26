@@ -1,7 +1,9 @@
 module Style
   module SentenceScans
     class UselessWord < Base
-      USELESS_WORDS = ["very"]
+
+      USELESS_WORDS = ["very", "pretty"]
+
       def scan
         USELESS_WORDS.each do |useless_word|
           create_alert(useless_word) if sentence.match /\b#{useless_word}\b/ 

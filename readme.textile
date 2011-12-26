@@ -8,4 +8,4 @@ nltk.download('maxent_treebank_pos_tagger');
 3. Capitalization errors
 4. Agreement errors
 5. Spell Check
-6. List of Ugly Words
+6. List of Ugly WordSentence.new s
