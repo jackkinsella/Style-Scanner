@@ -14,8 +14,16 @@ module Style
       def capitalized_word_pairs
         # ruby searches for WORD_PAIRS on base class without the following line
         word_pairs = self.class::WORD_PAIRS
-        capitalized_versions = Hash[word_pairs.map {|k,v| [k.capitalize, v.capitalize]}]
-        word_pairs.update(capitalized_versions)
+      end
+
+      def add_capitalizeds(words, options = {})
+        all_caps = options[:all_caps]
+        if words.kind_of? Hash
+          capitalized_versions = Hash[words.map {|k,v| [k.capitalize, v.capitalize, (v.upcase if all_caps)]}]
+          word_pairs.update(capitalized_versions)
+        elsif words.kind_of? Array
+          words.map {|word| [word, word.capitalize, (word.upcase if all_caps)]}.flatten
+        end
       end
 
       def replacement_word(offending_word)
