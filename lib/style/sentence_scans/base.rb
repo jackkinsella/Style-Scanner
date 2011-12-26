@@ -42,8 +42,10 @@ module Style
         tokenized_text.select {|k,v| v== code}.map &:first
       end
 
-      def hasnt_already_an_alert_on(word)
-        strip_punctuation(sentence.find_alerts_by_type(alert_name).offending_text) != strip_punctuation(word)
+      def already_has_that_alert_on_text(offending_text)
+        sentence.find_alerts_by_type(alert_name).any? do |alert|
+          alert.on_text?(offending_text)
+        end
       end
 
       def alert_name
@@ -54,9 +56,6 @@ module Style
         sentence.add_alert(Alerts.const_get(alert_name).new(offending_text))
       end
 
-      def strip_punctuation(word)
-        word.gsub(/[^a-zA-Z0-9-\s]/, "")
-      end
 
     end
   end
