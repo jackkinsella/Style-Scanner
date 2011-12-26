@@ -1,8 +1,8 @@
 module Style
   module SentenceScans
     class RepeatedWord < Base
-      def scan
-        consecutively_repeated_words = input_text.downcase.scan(REPEATED_WORD_REGEX).flatten
+      def scan(sentence)
+        consecutively_repeated_words = sentence.downcase.scan(REPEATED_WORD_REGEX).flatten
         # we need capitalization permutations, ordered by most likely
         consecutively_repeated_words.each do |word|
           # d word

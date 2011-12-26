@@ -1,5 +1,5 @@
 module Style
-  class Sentence
+  class Sentence < String
     attr_reader :alerts, :text
     def initialize(text)
       @text = text

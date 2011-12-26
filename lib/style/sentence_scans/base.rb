@@ -3,14 +3,13 @@ module Style
     class Base
       REPEATED_WORD_REGEX = /\b(\w+)\b\s+\1/
 
-      attr_reader :sentence, :scanner
-
-      def initialize(sentence, scanner)
-        @sentence = sentence
-        @scanner = scanner 
-      end
+      attr_reader :sentence
 
       private
+
+      def scanner
+        sentence.scanner
+      end
 
       def remove(old_word)
         sub(old_word, "")
@@ -29,8 +28,8 @@ module Style
       end
 
       def create_alert(offending_text, tokenized_text)
-        class_name = self.class
-        class_name.new(sentence, offending_text)
+        class_name = "Alerts::#{self.class.to_s}"
+        Kernel.const_get(class_name).new(sentence, offending_text)
       end
 
     end

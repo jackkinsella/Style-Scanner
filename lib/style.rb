@@ -17,5 +17,4 @@ Dir[File.dirname(__FILE__) + '/**/*.rb'].each do |file|
 end
 
 module Style
-  include Alerts
 end
