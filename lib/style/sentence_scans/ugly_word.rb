@@ -1,7 +1,9 @@
 module Style
   module SentenceScans
     class UglyWord < Base
-      UGLY_WORDs= {"utilize" => "use"}
+
+      UGLY_WORDS= {"utilize" => "use"}
+
       def scan
         UGLY_WORDS.keys.each do |offender|
           suggested_sentence = sub(offender, replacement(offender))
