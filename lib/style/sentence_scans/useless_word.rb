@@ -6,7 +6,7 @@ module Style
 
       def scan
         USELESS_WORDS.each do |useless_word|
-          create_alert(useless_word) if sentence.contains? useless_word 
+          create_alert(useless_word) if sentence.contains?(useless_word) 
         end
       end
     end
