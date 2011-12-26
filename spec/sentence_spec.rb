@@ -9,9 +9,10 @@ module Style
     it "lets you access original text" do
       subject.text.should == text 
     end
-    context "#create_alert" do
-      it "creates an alert of a particular type to the sentence" do
-        subject.create_alert(RepeatedWord, "shopping shopping")
+    context "#add_alert" do
+      let(:repeated_word) {Alerts::RepeatedWord.new(subject, "shopping shopping")}
+      it "adds an alert to the sentence" do
+        subject.add_alert(repeated_word)
         subject.alerts.first.class.should == RepeatedWord
       end
     end

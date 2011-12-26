@@ -7,10 +7,6 @@ module Style
 
       private
 
-      def scanner
-        sentence.scanner
-      end
-
       def remove(old_word)
         sub(old_word, "")
       end
@@ -19,17 +15,18 @@ module Style
         sentence.gsub!(/\b#{old_word}\b/, new_word)
       end
 
+      # We retokenize for the text case where no overall scanner is prepared
       def tokenized_text
-        scanner.tokenized_text 
+        sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tokenizer.new(sentence.text).tokenize
       end
 
       def part_of_speech(code)
         tokenized_text.select {|k,v| v== code}.map &:first
       end
 
-      def create_alert(offending_text, tokenized_text)
-        class_name = "Alerts::#{self.class.to_s}"
-        Kernel.const_get(class_name).new(sentence, offending_text)
+      def create_alert(offending_text)
+        alert_name = self.class.to_s.gsub("Style::SentenceScans::", "")
+        sentence.add_alert(Alerts.const_get(alert_name).new(sentence, offending_text))
       end
 
     end

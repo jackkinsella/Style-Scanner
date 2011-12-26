@@ -1,6 +1,5 @@
 module Style
   class Scanner 
-  include Errors
   include Alerts
 
     attr_reader :input_text, :tokenized_text, :sentences
@@ -30,12 +29,7 @@ module Style
     private
 
     def tokenize_text
-      res = eval(%x{python #{File.dirname(__FILE__)}/tokenizer.py "#{input_text}"})
-      if res == nil || res == "" 
-        raise TokenizerNotWorking, "Result of script: #{res}" 
-      else
-        res
-      end
+      Tokenizer.new(input_text).tokenize
     end
 
     def split_into_sentences
