@@ -12,7 +12,7 @@ module Style
             let(:active_simple_past) {Sentence.new "Rita stoke my bike"}
             let(:active_present_perfect) {Sentence.new "Rita has written a letter."} 
             let(:active_future) {Sentence.new "Rita will write a letter."}
-            let(:active_hilsverben) {Sentence.new "Rita can write a letter."}
+            let(:active_hilfsverben) {Sentence.new "Rita can write a letter."}
 
             context "#scan" do
                 it "catches all passives" do
@@ -23,11 +23,11 @@ module Style
                     should_alert present_perfect, Alerts::PassiveTense
                 end
                 it "does not catch any actives" do
-                    should_not_alert present, Alerts::PassiveTense
-                    should_not_alert simple_past, Alerts::PassiveTense
-                    should_not_alert future, Alerts::PassiveTense
-                    should_not_alert hilfsverben, Alerts::PassiveTense
-                    should_not_alert present_perfect, Alerts::PassiveTense
+                    should_not_alert active_present, Alerts::PassiveTense
+                    should_not_alert active_simple_past, Alerts::PassiveTense
+                    should_not_alert active_future, Alerts::PassiveTense
+                    should_not_alert active_hilfsverben, Alerts::PassiveTense
+                    should_not_alert active_present_perfect, Alerts::PassiveTense
 
                 end
             end

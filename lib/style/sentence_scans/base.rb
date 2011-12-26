@@ -21,7 +21,7 @@ module Style
 
       # We retokenize for the text case where no overall scanner is prepared
       def tokenized_text
-        sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tokenizer.new(sentence.text).tokenize
+        @tokenized_text ||= sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tokenizer.new(sentence.text).tokenize
       end
 
       def part_of_speech(code)
