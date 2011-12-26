@@ -19,6 +19,17 @@ module Style
         sentence.gsub!(/\b#{old_word}\b/, new_word)
       end
 
+      def capitalized_word_pairs
+        # ruby searches for WORD_PAIRS on base class without the following line
+        word_pairs = self.class::WORD_PAIRS
+        capitalized_versions = Hash[word_pairs.map {|k,v| [k.capitalize, v.capitalize]}]
+        word_pairs.update(capitalized_versions)
+      end
+
+      def replacement(offending_word)
+        capitalized_word_pairs[offending_word]
+      end
+
       # We retokenize for the text case where no overall scanner is prepared
       def tokenized_text
         @tokenized_text ||= sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tokenizer.new(sentence.text).tokenize

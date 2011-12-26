@@ -15,6 +15,10 @@ module Style
       @alerts.select {|alert| alert.class == alert_type}
     end
 
+    def contains?(word)
+      text.match /\b#{word}\b/
+    end
+
     def add_alert(alert)
       alerts << alert
     end
