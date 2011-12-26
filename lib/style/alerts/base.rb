@@ -4,7 +4,7 @@ module Style
       attr_reader :offending_text
 
       def initialize(offending_text)
-        @offending_word = offending_text
+        @offending_text = offending_text
       end
 
     end
