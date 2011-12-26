@@ -5,7 +5,7 @@ Gem::Specification.new do |gem|
   gem.authors       = ["Jack Kinsella"]
   gem.email         = ["jack.kinsella@gmail.com"]
   gem.description   = %q{TODO: Write a gem description}
-  gem.summary       = %q{TODO: Write a gem summary}
+  gem.summary       = %q{Formal English Style Guide: Write more effectively}
   gem.homepage      = ""
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
@@ -18,5 +18,6 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
   gem.add_development_dependency "ruby-debug19"
+  gem.add_development_dependency "log_buddy"
   gem.add_development_dependency "looksee"
 end
