@@ -14,5 +14,9 @@ Gem::Specification.new do |gem|
   gem.name          = "style"
   gem.require_paths = ["lib"]
   gem.version       = Style::VERSION
+  gem.add_dependency "punkt-segmenter"
   gem.add_development_dependency "rspec"
+  gem.add_development_dependency "rake"
+  gem.add_development_dependency "ruby-debug19"
+  gem.add_development_dependency "looksee"
 end
