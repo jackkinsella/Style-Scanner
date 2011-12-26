@@ -6,7 +6,8 @@ module Style
 
             def scan
                 dot_placement_permutations(LATINS).each do |latin_abbreviation|
-                    create_alert(latin_abbreviation) if sentence.contains?(latin_abbreviation)
+                    create_alert(latin_abbreviation) if sentence.contains?(latin_abbreviation) 
+                    # && hasnt_already_an_alert_on(latin_abbreviation)
                 end
             end
 
@@ -15,7 +16,7 @@ module Style
             def dot_placement_permutations(abbreviations)
                 add_capitalizeds(abbreviations.map do |abbr|
                     [abbr, dot_at_end(abbr), dot_between_every_letter(abbr)]
-                end.flatten, :all_caps => true)
+                end, :all_caps => true).flatten
             end
 
             def dot_at_end(abbr)
