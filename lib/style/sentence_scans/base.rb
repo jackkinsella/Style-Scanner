@@ -17,7 +17,7 @@ module Style
       end
 
       def add_capitalizeds(words, options = {})
-        # Capitalizer.new(words).capitalize(:all_caps => true)
+        # CollectionCapitalizer.new(words).capitalize(:all_caps => true)
 
         words.flatten!
         all_caps = options[:all_caps]
