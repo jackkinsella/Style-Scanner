@@ -1,7 +1,6 @@
 module Style
   module SentenceScans
     class Base
-      REPEATED_WORD_REGEX = /\b(\w+)\b\s+\1/
 
       attr_reader :sentence
 
@@ -17,16 +16,7 @@ module Style
       end
 
       def add_capitalizeds(words, options = {})
-        # CollectionCapitalizer.new(words).capitalize(:all_caps => true)
-
-        words.flatten!
-        all_caps = options[:all_caps]
-        if words.kind_of? Hash
-          capitalized_versions = Hash[words.map {|k,v| [k.capitalize, v.capitalize, (v.upcase if all_caps)]}]
-          word_pairs.update(capitalized_versions)
-        elsif words.kind_of? Array
-          words.map {|word| [word, word.capitalize, (word.upcase if all_caps)]}.flatten
-        end
+        CollectionCapitalizer.new(words).capitalize(:all_caps => true)
       end
 
       def replacement_word(offending_word)
