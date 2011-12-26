@@ -1,7 +1,11 @@
 module Style
-  class Sentence < String
-    attr_reader :alerts, :text
+  class Sentence 
+    
+    extend Forwardable
+    def_delegators :@text, :gsub!, :match
 
+    attr_reader :alerts, :text
+    
     def initialize(text)
       @text = text
       @alerts = []

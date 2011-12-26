@@ -26,7 +26,7 @@ module Style
 
       def create_alert(offending_text)
         alert_name = self.class.to_s.gsub("Style::SentenceScans::", "")
-        sentence.add_alert(Alerts.const_get(alert_name).new(sentence, offending_text))
+        sentence.add_alert(Alerts.const_get(alert_name).new(offending_text))
       end
 
     end

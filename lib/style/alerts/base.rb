@@ -1,10 +1,9 @@
 module Style
   module Alerts
     class Base
-      attr_reader :sentence, :offending_text
+      attr_reader :offending_text
 
-      def initialize(sentence, offending_text)
-        @sentence = sentence
+      def initialize(offending_text)
         @offending_word = offending_text
       end
 
