@@ -12,12 +12,12 @@ module Style
 
     def scan 
       sentences.each do |sentence|
-        SentenceScans::UselessWord.scan(sentence)
-        SentenceScans::UglyWord.scan(sentence)
-        SentenceScans::RepeatedWord.scan(sentence)
-        SentenceScans::ExcessWhiteSpace.scan(sentence)
-        SentenceScans::BrokenLink.scan(sentence)
-        SentenceScans::Adverb.scan(sentence)
+        [SentenceScans::UselessWord, SentenceScans::UglyWord,
+          SentenceScans::RepeatedWord, SentenceScans::PassiveTense,
+          SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink,
+          SentenceScans::Adverb].each do |scanner_type|
+          scanner_type.scan(sentence)
+          end
       end
       Results.user_friendly_readout(sentences)
     end

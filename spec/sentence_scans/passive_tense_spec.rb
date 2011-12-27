@@ -10,7 +10,7 @@ module Style
             let(:hilfsverben) {Sentence.new "A letter can be written"}
             let(:present_progressive) {Sentence.new "A letter is being written."}
             let(:past_progressive) {Sentence.new "A letter was being written."}
-            let(:past_perfect) {Sentence.new "A lattter had been written."}
+            let(:past_perfect) {Sentence.new "A letter had been written."}
             let(:conditional_1) {Sentence.new "A letter would be written."}
             let(:conditional_2) {Sentence.new "A letter would have been written."}
 
