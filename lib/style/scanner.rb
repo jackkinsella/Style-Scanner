@@ -14,14 +14,14 @@ module Style
     # Scanner.new(text).print
     def scan 
       sentences.each do |sentence|
-        UselessWordScan.new(sentence)
-        UglyWordScan.new(sentence)
-        RepeatedWordScan.new(sentence)
-        ExcessWhiteSpaceScan.new(sentence)
-        BrokenLinkScan.new(sentence)
-        AdverbScan.new(sentence)
+        SentenceScans::UselessWord.scan(sentence)
+        SentenceScans::UglyWord.scan(sentence)
+        SentenceScans::RepeatedWord.scan(sentence)
+        SentenceScans::ExcessWhiteSpace.scan(sentence)
+        SentenceScans::BrokenLink.scan(sentence)
+        SentenceScans::Adverb.scan(sentence)
       end
-      puts Results.new(sentences)
+      Results.print(sentences)
     end
 
     def find_sentence(text)
@@ -37,6 +37,10 @@ module Style
     def split_into_sentences
       tokenizer = Punkt::SentenceTokenizer.new(input_text)
       tokenizer.sentences_from_text(input_text, :output => :sentences_text).map {|text| Sentence.new(text)}
+    end
+
+    def training_text
+      File.read("#{File.dirname(__FILE__)}/english.pickle")
     end
 
   end

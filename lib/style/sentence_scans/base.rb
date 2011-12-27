@@ -8,6 +8,10 @@ module Style
         @sentence = sentence
       end
 
+      def self.scan(sentence)
+        new(sentence).scan
+      end
+
       private
 
       def word_pairs
