@@ -8,9 +8,8 @@ module Style
 
       def scan
         dot_placement_permutations(LATINS).each do |latin_abbreviation|
-          if sentence.contains?(latin_abbreviation) && ! already_has_that_problem_on_text(latin_abbreviation)
+          if sentence.contains?(latin_abbreviation) 
             create_problem(latin_abbreviation)
-
           end
         end
       end

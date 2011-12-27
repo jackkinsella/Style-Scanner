@@ -3,6 +3,7 @@
 # external dependencies
 require "log_buddy"
 require "punkt-segmenter"
+require 'colorize'
 require "net/http"
 
 #external setups

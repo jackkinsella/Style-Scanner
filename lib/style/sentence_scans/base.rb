@@ -51,7 +51,7 @@ module Style
       end
 
       def create_problem(offending_text)
-        sentence.add_problem(problem_class.new(sentence, offending_text))
+        sentence.add_problem(problem_class.new(sentence, offending_text)) unless already_has_that_problem_on_text(offending_text)
       end
 
     end
