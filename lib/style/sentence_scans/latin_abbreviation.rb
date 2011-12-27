@@ -9,7 +9,6 @@ module Style
       def scan
         dot_placement_permutations(LATINS).each do |latin_abbreviation|
           if sentence.contains?(latin_abbreviation) && ! already_has_that_alert_on_text(latin_abbreviation)
-
             create_alert(latin_abbreviation)
 
           end

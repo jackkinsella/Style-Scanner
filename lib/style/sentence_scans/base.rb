@@ -33,19 +33,18 @@ module Style
       end
 
       def already_has_that_alert_on_text(offending_text)
-        sentence.find_alerts_by_type(alert_name).any? do |alert|
+        sentence.find_alerts_by_type(alert_class).any? do |alert|
           alert.on_text?(offending_text)
         end
       end
 
-      def alert_name
-         self.class.to_s.gsub("Style::SentenceScans::", "")
+      def alert_class
+         Alerts.const_get(self.class.to_s.gsub("Style::SentenceScans::", ""))
       end
 
       def create_alert(offending_text)
-        sentence.add_alert(Alerts.const_get(alert_name).new(offending_text))
+        sentence.add_alert(alert_class.new(offending_text))
       end
-
 
     end
   end

@@ -9,7 +9,7 @@ module Style
     it "hold a collection of alerts" do
       subject.alerts.should == []
     end
-    
+
     it "lets you access original text" do
       subject.text.should == text 
     end
@@ -26,13 +26,13 @@ module Style
         subject.alerts.first.class.should == Alerts::RepeatedWord
       end
     end
-    
+
     context "#contains?" do
       it "true if a word is contained within the text" do
-       subject.contains?("shopping").should be_true
+        subject.contains?("shopping").should be_true
       end
       it "false if word not contained" do
-       subject.contains?("soccer").should be_false
+        subject.contains?("soccer").should be_false
       end
       it "false if only part of a word" do
         subject.contains?("mas").should be_false
@@ -48,11 +48,11 @@ module Style
     end
     context "#find_alerts_by_type" do
       it "finds the alert according to its class" do
-      subject.add_alert(repeated_word_alert)
-      subject.add_alert(ugly_word_alert)
-      found_alerts = subject.find_alerts_by_type(Alerts::UglyWord)
-      found_alerts.size.should == 1
-      found_alerts.first.class.should == Alerts::UglyWord 
+        subject.add_alert(repeated_word_alert)
+        subject.add_alert(ugly_word_alert)
+        found_alerts = subject.find_alerts_by_type(Alerts::UglyWord)
+        found_alerts.size.should == 1
+        found_alerts.first.class.should == Alerts::UglyWord 
       end
     end
   end
