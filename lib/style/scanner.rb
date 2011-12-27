@@ -10,8 +10,6 @@ module Style
       @tokenized_text = tokenize_text
     end
 
-    # Run from cmd lin
-    # Scanner.new(text).print
     def scan 
       sentences.each do |sentence|
         SentenceScans::UselessWord.scan(sentence)
@@ -21,7 +19,7 @@ module Style
         SentenceScans::BrokenLink.scan(sentence)
         SentenceScans::Adverb.scan(sentence)
       end
-      Results.user_friendly_readout(sentences)
+      puts Results.user_friendly_readout(sentences)
     end
 
     def find_sentence(text)

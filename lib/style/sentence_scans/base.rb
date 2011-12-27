@@ -51,7 +51,7 @@ module Style
       end
 
       def create_problem(offending_text)
-        sentence.add_problem(sentence, problem_class.new(offending_text))
+        sentence.add_problem(problem_class.new(offending_text, sentence))
       end
 
     end

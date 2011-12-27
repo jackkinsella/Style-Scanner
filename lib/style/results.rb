@@ -7,7 +7,7 @@ module Style
 
       def user_friendly_readout(sentences)
         @sentences = sentences.select {|sentence| sentence.with_problems? }
-        puts to_a.join("\n")
+        to_a.join("\n")
       end
 
       private
