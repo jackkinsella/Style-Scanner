@@ -1,0 +1,3 @@
+#!/usr/bin/env ruby
+require "style"
+Style::Scanner.new(ARGV[1]).scan

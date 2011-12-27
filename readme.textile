@@ -2,10 +2,12 @@ Setup
 python
 nltk.download('maxent_treebank_pos_tagger');
 
+# Usage 
+
 # TODO
-1. Handle additional passive tense
-2. Handle adverbs with passive tense
 3. Capitalization errors
 4. Agreement errors
 5. Spell Check
 6. List of Ugly WordSentence.new s
+7. Command line help with options parse
+8. LogBuddy fixed

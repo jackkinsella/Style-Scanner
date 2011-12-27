@@ -21,7 +21,7 @@ module Style
         BrokenLinkScan.new(sentence)
         AdverbScan.new(sentence)
       end
-      # Results.new(sentences).print
+      puts Results.new(sentences)
     end
 
     def find_sentence(text)
