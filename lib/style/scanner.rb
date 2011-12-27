@@ -4,8 +4,8 @@ module Style
     attr_reader :input_text, :tokenized_text, :sentences
     attr_accessor :finished_text
 
-    def initialize(file_or_text)
-      @input_text = File.read(file_or_text) rescue file_or_text
+    def initialize(input)
+      @input_text = input 
       @sentences = split_into_sentences
       @tokenized_text = tokenize_text
     end
