@@ -2,7 +2,7 @@ module Style
   module SentenceScans
     class RepeatedWord < Base
 
-      REPEATED_WORD_REGEX = /\b(\w+)\b\s+\1/
+      REPEATED_WORD_REGEX = /\b(\w+)\b\s+\b\1\b/
 
       def scan
         consecutively_repeated_words = sentence.downcase.scan(REPEATED_WORD_REGEX).flatten
