@@ -15,7 +15,7 @@ module Style
         [SentenceScans::UselessWord, SentenceScans::UglyWord,
           SentenceScans::RepeatedWord, SentenceScans::PassiveTense,
           SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink,
-          SentenceScans::Adverb].each do |scanner_type|
+          SentenceScans::Adverb, SentenceScans::SpeakingInGeneralities].each do |scanner_type|
           scanner_type.scan(sentence)
           end
       end

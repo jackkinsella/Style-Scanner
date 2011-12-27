@@ -23,5 +23,20 @@ module Style
       end
 
     end
+
+    def self.problem_class_names_from_dir
+       Dir[(File.dirname(__FILE__) + "/../sentence_scans/*.rb")].
+         map {|filename| File.basename(filename, ".rb").split("_").map(&:capitalize).join } - ["Base"]
+    end
+
+    def self.dynamically_generate_problem_classes
+       problem_class_names_from_dir.each do |problem_class_name|
+        eval %Q{ class #{problem_class_name} < Base
+          end}
+      end
+    end
+
+    dynamically_generate_problem_classes
+
   end
 end
