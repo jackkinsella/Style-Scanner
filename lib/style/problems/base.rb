@@ -3,7 +3,7 @@ module Style
     class Base
       attr_reader :offending_text, :sentence
 
-      def initialize(sentece, offending_text)
+      def initialize(sentence, offending_text)
         @sentence = sentence
         @offending_text = offending_text
       end
@@ -13,7 +13,13 @@ module Style
       end
 
       def user_friendly_readout
-        [1,2,3].join(" | ")
+        [problem_name,sentence.text,offending_text].join(" | ")
+      end
+
+      private
+
+      def problem_name
+        self.class.to_s.gsub(/Style::Problems::/,"")
       end
 
     end

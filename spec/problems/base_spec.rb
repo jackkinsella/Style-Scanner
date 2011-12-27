@@ -14,13 +14,13 @@ module Style
           subject.user_friendly_readout.split("|").size.should == 3
         end
         it "shows stringified problem name first" do
-          subject.user_friendly_readout.split("|")[0].should == "Useless Word"
+          subject.user_friendly_readout.split("|")[0].strip.should == "Base"
         end
         it "shows problem sentence second" do
-          subject.user_friendly_readout.split("|")[1].should == "I really like tomatoes."
+          subject.user_friendly_readout.split("|")[1].strip.should == "I really like tomatoes."
         end
-        it "shows offending word third" do
-          subject.user_friendly_readout.split("|")[2].should == "really"
+        it "shows offending text third" do
+          subject.user_friendly_readout.split("|")[2].strip.should == "really"
         end
       end
 
