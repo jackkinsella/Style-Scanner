@@ -5,13 +5,15 @@ module Style
 
       attr_reader :sentences
 
-      def print(sentences)
+      def user_friendly_readout(sentences)
         @sentences = sentences.select {|sentence| sentence.with_problems? }
         puts to_a.join("\n")
       end
 
+      private
+
       def to_a
-        sentences.map(&:problems).map(&:print).flatten
+        sentences.map(&:problems).flatten.map(&:user_friendly_readout).flatten
       end
 
     end

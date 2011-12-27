@@ -21,7 +21,7 @@ module Style
         SentenceScans::BrokenLink.scan(sentence)
         SentenceScans::Adverb.scan(sentence)
       end
-      Results.print(sentences)
+      Results.user_friendly_readout(sentences)
     end
 
     def find_sentence(text)

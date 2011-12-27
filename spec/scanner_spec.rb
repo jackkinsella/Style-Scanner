@@ -20,7 +20,7 @@ module Style
                 subject.scan
             end
             it "calls the results method" do
-                Results.should_receive(:print).and_return(double(:results).as_null_object)
+                Results.should_receive(:user_friendly_readout).and_return(double(:results).as_null_object)
                 subject.scan
             end
         end
