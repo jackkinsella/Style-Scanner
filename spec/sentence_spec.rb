@@ -27,6 +27,16 @@ module Style
       end
     end
 
+    context "#with_problems?" do
+      it "true for sentences with problems" do
+        subject.problems << double(:problem)
+        subject.with_problems?.should be_true
+      end
+      it "false for sentences without problems" do
+        subject.with_problems?.should be_false
+      end
+    end
+
     context "#contains?" do
       it "true if a word is contained within the text" do
         subject.contains?("shopping").should be_true

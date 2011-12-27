@@ -23,6 +23,10 @@ module Style
       problems << problem
     end
 
+    def with_problems?
+      problems.any?
+    end
+
     def to_s
       "Sentence Obj: text: #{text} problems: #{problems}"
     end
