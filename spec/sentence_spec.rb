@@ -6,8 +6,8 @@ module Style
     let(:ugly_word_alert) {Alerts::UglyWord.new("utilize")}
     subject { Sentence.new(text) }
 
-    it "hold a collection of alerts" do
-      subject.alerts.should == []
+    it "hold a collection of problems" do
+      subject.problems.should == []
     end
 
     it "lets you access original text" do
@@ -23,7 +23,7 @@ module Style
     context "#add_alert" do
       it "adds an alert to the sentence" do
         subject.add_alert(repeated_word_alert)
-        subject.alerts.first.class.should == Alerts::RepeatedWord
+        subject.problems.first.class.should == Alerts::RepeatedWord
       end
     end
 
@@ -46,13 +46,13 @@ module Style
         subject.to_s.should match /Sentence Obj/
       end
     end
-    context "#find_alerts_by_type" do
-      it "finds the alert according to its class" do
-        subject.add_alert(repeated_word_alert)
-        subject.add_alert(ugly_word_alert)
-        found_alerts = subject.find_alerts_by_type(Alerts::UglyWord)
-        found_alerts.size.should == 1
-        found_alerts.first.class.should == Alerts::UglyWord 
+    context "#find_problems_by_type" do
+      it "finds the problem according to its class" do
+        subject.add_problem(repeated_word_alert)
+        subject.add_problem(ugly_word_alert)
+        found_problems = subject.find_problems_by_type(Problems::UglyWord)
+        found_problems.size.should == 1
+        found_problems.first.class.should == Problems::UglyWord 
       end
     end
   end

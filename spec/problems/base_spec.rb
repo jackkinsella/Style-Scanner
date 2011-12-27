@@ -1,6 +1,6 @@
 require "spec_helper"
 module Style
-  module Alerts
+  module Problems 
     describe Base do
       subject {Base.new("really")}
       it "knows its offending text" do

@@ -10,7 +10,7 @@ LogBuddy.init({
   :logger   => File.open(File.dirname(__FILE__) + "/../log/development.log") 
 })
 
-require "style/alerts/base"
+require "style/problems/base"
 require "style/sentence_scans/base"
 Dir[File.dirname(__FILE__) + '/**/*.rb'].each do |file|
   require file

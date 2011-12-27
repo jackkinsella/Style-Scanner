@@ -32,8 +32,8 @@ module Style
         tokenized_text.select {|k,v| v== code}.map &:first
       end
 
-      def already_has_that_alert_on_text(offending_text)
-        sentence.find_alerts_by_type(alert_class).any? do |alert|
+      def already_has_that_problem_on_text(offending_text)
+        sentence.find_problems_by_type(alert_class).any? do |alert|
           alert.on_text?(offending_text)
         end
       end

@@ -6,17 +6,17 @@ require 'style'
 
 module StyleTestingHelpers
 
-  def should_alert(sentence, alert_type, offending_text=nil)
+  def should_alert(sentence, problem_type, offending_text=nil)
     subject = described_class.new(sentence)
     subject.scan
-    alert = sentence.find_alerts_by_type(alert_type)
+    alert = sentence.find_problems_by_type(problem_type)
     alert.size.should == 1
   end
 
-  def should_not_alert(sentence, alert_type)
+  def should_not_alert(sentence, problem_type)
     subject = described_class.new(sentence)
     subject.scan
-    sentence.find_alerts_by_type(alert_type).size.should == 0
+    sentence.find_problems_by_type(problem_type).size.should == 0
   end
 
 end
