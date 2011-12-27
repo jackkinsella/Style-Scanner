@@ -1,5 +1,5 @@
 module Style
-  module Alerts
+  module Problems
     class UglyWord < Base
           
     end

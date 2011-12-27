@@ -7,13 +7,13 @@ module Style
       let(:space_before_comma) {Sentence.new "I ran ,to the fam."}
       context "#scan" do
         it "removes spaces before full stops" do
-          should_alert space_before_stop, Alerts::ExcessWhiteSpace, "I ran."
+          should_problem space_before_stop, Problems::ExcessWhiteSpace, "I ran."
         end
         it "removes spaces before commas" do
-          should_alert space_before_comma, Alerts::ExcessWhiteSpace, "I ran."
+          should_problem space_before_comma, Problems::ExcessWhiteSpace, "I ran."
         end
         it "removes double spaces" do
-          should_alert double_spaces, Alerts::ExcessWhiteSpace, "It was a place."
+          should_problem double_spaces, Problems::ExcessWhiteSpace, "It was a place."
         end
       end
     end

@@ -11,7 +11,7 @@ module Style
                             Net::HTTP.get_response(URI.parse(url))
                             # socket error occurs if link is bad
                         rescue SocketError
-                            create_alert("Url #{url} does not work")
+                            create_problem("Url #{url} does not work")
                         end
                     end
                 end

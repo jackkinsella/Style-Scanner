@@ -8,16 +8,16 @@ module Style
       let(:utilize_past) {Sentence.new("She utilized her brain.")}
       context "#scan" do
         it "recommends you replaces utilize with use" do
-          should_alert utilize, Alerts::UglyWord, "We will use these apples."
+          should_problem utilize, Problems::UglyWord, "We will use these apples."
         end
         it "also catches uppercase" do
-          should_alert utilize_uppercase, Alerts::UglyWord, "We Use Kleenex"
+          should_problem utilize_uppercase, Problems::UglyWord, "We Use Kleenex"
         end
         it "also catches plural form" do
-          should_alert utilize_plural, Alerts::UglyWord, "She uses her brain."
+          should_problem utilize_plural, Problems::UglyWord, "She uses her brain."
         end
         it "also catches past tense form" do
-          should_alert utilize_past, Alerts::UglyWord, "She used her brain."
+          should_problem utilize_past, Problems::UglyWord, "She used her brain."
         end
       end
     end

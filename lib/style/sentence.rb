@@ -11,16 +11,16 @@ module Style
       @problems = []
     end
 
-    def find_problems_by_type(alert_type)
-      @problems.select {|alert| alert.class == alert_type}
+    def find_problems_by_type(problem_type)
+      @problems.select {|problem| problem.class == problem_type}
     end
 
     def contains?(word)
       text.match /\b#{word}\b/
     end
 
-    def add_alert(alert)
-      problems << alert
+    def add_problem(problem)
+      problems << problem
     end
 
     def to_s

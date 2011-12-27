@@ -8,11 +8,11 @@ module Style
 
       context "#scan" do
         it "should remove words repeated in a row" do
-          should_alert consecutive_repeated_words, Alerts::RepeatedWord, "I went to the shop"
+          should_problem consecutive_repeated_words, Problems::RepeatedWord, "I went to the shop"
         end
         it "removes words repeated in a row where one is capitalized" do
-          should_alert consecutive_repeated_words_capitalized1, Alerts::RepeatedWord, "I went to the shop"
-          should_alert consecutive_repeated_words_capitalized2, Alerts::RepeatedWord, "I went to the shop"
+          should_problem consecutive_repeated_words_capitalized1, Problems::RepeatedWord, "I went to the shop"
+          should_problem consecutive_repeated_words_capitalized2, Problems::RepeatedWord, "I went to the shop"
         end
       end
     end

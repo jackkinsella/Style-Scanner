@@ -11,22 +11,22 @@ module Style
 
             context "#scan" do
                 it "catches i.e. with proper dot placement" do
-                    should_alert ie, Alerts::LatinAbbreviation
+                    should_problem ie, Problems::LatinAbbreviation
                 end
                 it "catches ie without middle dot" do
-                    should_alert ie_without_middle_dot, Alerts::LatinAbbreviation
+                    should_problem ie_without_middle_dot, Problems::LatinAbbreviation
                 end
                 it "catches ie without final dot" do
-                    should_alert ie_without_final_dot, Alerts::LatinAbbreviation
+                    should_problem ie_without_final_dot, Problems::LatinAbbreviation
                 end
                 it "catches ie without any dots" do
-                    should_alert ie_without_dots, Alerts::LatinAbbreviation
+                    should_problem ie_without_dots, Problems::LatinAbbreviation
                 end
                 it "catches ie capitalized" do
-                    should_alert ie_capitalized, Alerts::LatinAbbreviation
+                    should_problem ie_capitalized, Problems::LatinAbbreviation
                 end
                 it "catches double word abbreviations like 'et cetera'" do
-                    should_alert double_word_abbreviation, Alerts::LatinAbbreviation
+                    should_problem double_word_abbreviation, Problems::LatinAbbreviation
                 end
             end
         end

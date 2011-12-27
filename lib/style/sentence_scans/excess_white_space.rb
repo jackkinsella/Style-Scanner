@@ -9,7 +9,7 @@ module Style
 
         problems = [between_words, before_full_stop, before_commas].compact.flatten
         problems.each do |problem|
-          create_alert(problem.post_match) 
+          create_problem(problem.post_match) 
         end
       end
 

@@ -11,7 +11,7 @@ module Style
 
             def scan
                 capitalized_word_pairs.keys.each do |offender|
-                    create_alert(replacement_word(offender)) if sentence.contains?(offender)
+                    create_problem(replacement_word(offender)) if sentence.contains?(offender)
                 end
             end
 

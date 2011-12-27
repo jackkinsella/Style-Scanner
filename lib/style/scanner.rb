@@ -1,6 +1,5 @@
 module Style
   class Scanner 
-  include Alerts
 
     attr_reader :input_text, :tokenized_text, :sentences
     attr_accessor :finished_text
@@ -11,6 +10,8 @@ module Style
       @tokenized_text = tokenize_text
     end
 
+    # Run from cmd lin
+    # Scanner.new(text).print
     def scan 
       sentences.each do |sentence|
         UselessWordScan.new(sentence)
@@ -20,6 +21,7 @@ module Style
         BrokenLinkScan.new(sentence)
         AdverbScan.new(sentence)
       end
+      # Results.new(sentences).print
     end
 
     def find_sentence(text)

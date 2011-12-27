@@ -2,8 +2,8 @@ require "spec_helper"
 module Style
   describe Sentence do
     let(:text) {"Christmas shopping shopping for a very big dinosaur."}
-    let(:repeated_word_alert) {Alerts::RepeatedWord.new("shopping shopping")}
-    let(:ugly_word_alert) {Alerts::UglyWord.new("utilize")}
+    let(:repeated_word_problem) {Problems::RepeatedWord.new("shopping shopping")}
+    let(:ugly_word_problem) {Problems::UglyWord.new("utilize")}
     subject { Sentence.new(text) }
 
     it "hold a collection of problems" do
@@ -20,10 +20,10 @@ module Style
       end
     end
 
-    context "#add_alert" do
-      it "adds an alert to the sentence" do
-        subject.add_alert(repeated_word_alert)
-        subject.problems.first.class.should == Alerts::RepeatedWord
+    context "#add_problem" do
+      it "adds an problem to the sentence" do
+        subject.add_problem(repeated_word_problem)
+        subject.problems.first.class.should == Problems::RepeatedWord
       end
     end
 
@@ -48,8 +48,8 @@ module Style
     end
     context "#find_problems_by_type" do
       it "finds the problem according to its class" do
-        subject.add_problem(repeated_word_alert)
-        subject.add_problem(ugly_word_alert)
+        subject.add_problem(repeated_word_problem)
+        subject.add_problem(ugly_word_problem)
         found_problems = subject.find_problems_by_type(Problems::UglyWord)
         found_problems.size.should == 1
         found_problems.first.class.should == Problems::UglyWord 

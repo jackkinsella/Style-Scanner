@@ -6,7 +6,7 @@ module Style
 
       context "#scan" do
         it "removes the word 'very'" do
-          should_alert very, Alerts::UselessWord, "It was a good idea."
+          should_problem very, Problems::UselessWord, "It was a good idea."
         end
       end
     end

@@ -15,6 +15,10 @@ module Style
         word_pairs = self.class::WORD_PAIRS
       end
 
+      def capitalized_word_pairs
+        add_capitalizeds(word_pairs)
+      end
+
       def add_capitalizeds(words, options = {})
         CollectionCapitalizer.new(words).capitalize(:all_caps => true)
       end
@@ -25,7 +29,7 @@ module Style
 
       # We retokenize for the text case where no overall scanner is prepared
       def tokenized_text
-        @tokenized_text ||= sentence.respond_to?(:scanner) ? scanner.tokenized_text : tokenizer.new(sentence.text).tokenize
+        @tokenized_text ||= sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tokenizer.new(sentence.text).tokenize
       end
 
       def part_of_speech(code)
@@ -33,17 +37,17 @@ module Style
       end
 
       def already_has_that_problem_on_text(offending_text)
-        sentence.find_problems_by_type(alert_class).any? do |alert|
-          alert.on_text?(offending_text)
+        sentence.find_problems_by_type(problem_class).any? do |problem|
+          problem.on_text?(offending_text)
         end
       end
 
-      def alert_class
-         Alerts.const_get(self.class.to_s.gsub("Style::SentenceScans::", ""))
+      def problem_class
+         Problems.const_get(self.class.to_s.gsub("Style::SentenceScans::", ""))
       end
 
-      def create_alert(offending_text)
-        sentence.add_alert(alert_class.new(offending_text))
+      def create_problem(offending_text)
+        sentence.add_problem(problem_class.new(offending_text))
       end
 
     end

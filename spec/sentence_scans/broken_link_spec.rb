@@ -7,10 +7,10 @@ module Style
 
       context "#scan" do
         it "approves working links" do
-          should_not_alert working_link, Alerts::BrokenLink
+          should_not_problem working_link, Problems::BrokenLink
         end
         it "flags broken links" do
-          should_alert broken_link, Alerts::BrokenLink
+          should_problem broken_link, Problems::BrokenLink
         end
       end
     end

@@ -7,13 +7,13 @@ module Style
             let(:do_not) {Sentence.new "Do not look out"}
             context "#scan" do
                 it "catches don't" do
-                    should_alert dont, Alerts::InappropriateContraction
+                    should_problem dont, Problems::InappropriateContraction
                 end
                 it "catches capitalized don't" do
-                    should_alert capitalized_dont, Alerts::InappropriateContraction
+                    should_problem capitalized_dont, Problems::InappropriateContraction
                 end
                 it "does not catch 'does not'" do
-                    should_not_alert do_not, Alerts::InappropriateContraction
+                    should_not_problem do_not, Problems::InappropriateContraction
                 end
             end
         end
