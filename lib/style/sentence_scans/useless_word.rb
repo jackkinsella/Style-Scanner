@@ -6,10 +6,6 @@ module Style
         "remarkably", "surprisingly", "interestingly", "clearly",
         "very", "pretty" "fairly", "really"]
 
-        # GENERAL_WORDS = ["many", "various", "mostly", "largely",
-        # "huge", "a number", "significantly", "substantially",
-        # "vast", "relatively", "completely"]
-
       def scan
         USELESS_WORDS.each do |useless_word|
           create_problem(useless_word) if sentence.contains?(useless_word) 

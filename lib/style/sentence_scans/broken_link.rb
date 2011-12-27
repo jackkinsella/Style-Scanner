@@ -8,13 +8,20 @@ module Style
                     links = sentence.scan(URL_REGEX)
                     links.each do |url|
                         begin
-                            Net::HTTP.get_response(URI.parse(url))
+                            attempt_to_visit_url
                             # socket error occurs if link is bad
                         rescue SocketError
                             create_problem("Url #{url} does not work")
                         end
                     end
                 end
+
+            private
+
+            def attempt_to_visit_url(url)
+                Net::HTTP.get_response(URI.parse(url))
+            end
+
         end
     end
 end

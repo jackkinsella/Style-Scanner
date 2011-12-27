@@ -16,6 +16,7 @@ Gem::Specification.new do |gem|
   gem.version       = Style::VERSION
   gem.add_dependency "punkt-segmenter"
   gem.add_dependency "colorize"
+  gem.add_dependency "ffi-hunspell"
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
   gem.add_development_dependency "ruby-debug19"
