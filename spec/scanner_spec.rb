@@ -4,16 +4,23 @@ module Style
 
     describe Scanner do
 
+        let(:text) { "My name is Roboticus. I am a really powerful robot." }
+        subject {Scanner.new(text)}
+
         it "#find_sentence" do
             text = "Sentence Number 1. Sentence Number 2"
             sentence = Scanner.new(text).find_sentence("Sentence Number 2")
             sentence.text.should == "Sentence Number 2"
         end
 
-        let(:text) { "My name is Roboticus. I am a really powerful robot." }
+        context "#initialize" do
+            it "reads a file if given one" do
+              file = File.dirname(__FILE__) + "/fixtures/sample_text.txt"
+              scanner = Scanner.new(file)
+              scanner.input_text.should == File.read(file)
+            end
+        end
 
-
-        subject {Scanner.new(text)}
         context "#scan" do
             it "calls a variety of scans on its sentences" do
                 SentenceScans::UselessWord.should_receive(:scan).with(an_instance_of(Sentence)).twice.and_return(double(:sentence))

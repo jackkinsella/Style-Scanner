@@ -1,6 +1,6 @@
 module Style
-  include Errors
     class Tokenizer
+        include Errors
         attr_reader :input_text, :tokenized_text
 
         def initialize(input_text)

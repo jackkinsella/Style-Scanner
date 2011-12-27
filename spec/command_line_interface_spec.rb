@@ -1,12 +1,16 @@
 require "spec_helper"
 module Style
     describe "Command Line Interface" do
+
         let(:text) {"Tom hit the dog."}
+        let(:file) {Dir.pwd + "/spec/fixtures/sample_text.txt"}
         let(:scanner) {double(:scanner)}
-        it "should call scanner with text provided" do
-            Scanner.should_receive(:new).with(text).and_return(scanner)
-            scanner.should_receive(:scan)
-            system("style '#{text}'")
+
+        it "works with a sentence" do
+          system("style '#{text}'").should be_true
+        end
+        it "works with a file" do
+            system("style #{file}").should be_true
         end
     end
 end

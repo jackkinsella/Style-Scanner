@@ -2,7 +2,13 @@ module Style
   module SentenceScans
     class UselessWord < Base
 
-      USELESS_WORDS = ["very", "pretty" "fairly", "really"]
+      USELESS_WORDS = ["extremely", "exceedingly", "quite",
+        "remarkably", "surprisingly", "interestingly", "clearly",
+        "very", "pretty" "fairly", "really"]
+
+        # GENERAL_WORDS = ["many", "various", "mostly", "largely",
+        # "huge", "a number", "significantly", "substantially",
+        # "vast", "relatively", "completely"]
 
       def scan
         USELESS_WORDS.each do |useless_word|

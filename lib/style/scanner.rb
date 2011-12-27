@@ -4,8 +4,8 @@ module Style
     attr_reader :input_text, :tokenized_text, :sentences
     attr_accessor :finished_text
 
-    def initialize(input_text)
-      @input_text = input_text
+    def initialize(file_or_text)
+      @input_text = File.read(file_or_text) rescue file_or_text
       @sentences = split_into_sentences
       @tokenized_text = tokenize_text
     end
@@ -19,7 +19,7 @@ module Style
         SentenceScans::BrokenLink.scan(sentence)
         SentenceScans::Adverb.scan(sentence)
       end
-      puts Results.user_friendly_readout(sentences)
+      Results.user_friendly_readout(sentences)
     end
 
     def find_sentence(text)
