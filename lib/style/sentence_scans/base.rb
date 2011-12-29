@@ -32,12 +32,12 @@ module Style
       end
 
       # We retokenize for the text case where no overall scanner is prepared
-      def tokenized_text
-        @tokenized_text ||= sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tokenizer.new(sentence.text).tokenize
+      def words_with_parts_of_speech_tags 
+        @words_with_parts_of_speech_tags ||= sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tokenizer.new(sentence.text).words_with_parts_of_speech_tags
       end
 
       def part_of_speech(code)
-        tokenized_text.select {|k,v| v== code}.map &:first
+        words_with_parts_of_speech_tags.select {|k,v| v== code}.map &:first
       end
 
       def already_has_that_problem_on_text(offending_text)

@@ -1,22 +1,22 @@
 module Style
-  module SentenceScans
-    class RepeatedWord < Base
+    module SentenceScans
+        class RepeatedWord < Base
 
-      REPEATED_WORD_REGEX = /\b(\w+)\b\s+\b\1\b/
+            def scan
+                non_punctuation_tokens.
+                    select {|token| non_punctuation_tokens.count(token) >= 2}.
+                    each do |repeated_word|
+                        create_problem(repeated_word)
+                    end
+            end
 
-      def scan
-        consecutively_repeated_words.each do |repeated_word|
-          create_problem repeated_word 
-        end 
-      end
+            private
 
-      private
+            def non_punctuation_tokens
 
-      def consecutively_repeated_words
-        sentence.downcase.scan(REPEATED_WORD_REGEX).flatten
-      end
+            end
 
+
+        end
     end
-  end
 end
-

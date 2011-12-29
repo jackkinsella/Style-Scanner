@@ -4,8 +4,8 @@ module Style
           
         # heuristic: A "BE" verb follwed by a verb other than a gerund
         def scan
-           passive = tokenized_text.drop_while {|word_and_tag| ! be_verb(word_and_tag)}
-           create_problem passive[0][0] if passive.any?
+           passive = words_with_parts_of_speech_tags.drop_while {|word_and_tag| ! be_verb(word_and_tag)}
+           create_problem(passive[0][0]) if passive.any?
         end
 
         private

@@ -4,7 +4,7 @@ module Style
 
       def scan
         adverbs.each do |adverb|
-          create_problem adverb 
+          create_problem(adverb)
         end
       end
 

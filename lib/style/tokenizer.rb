@@ -1,17 +1,13 @@
 module Style
     class Tokenizer
 
-        include Errors
-        attr_reader :input_text, :tokenized_text
+        attr_reader :input_text
 
         def initialize(input_text)
             @input_text = input_text
         end
 
-        # returns format
-        #  [["I", "PRP"], ["am", "VBP"], ["a", "DET"], ["wicked", "JJ"], ["child", "NN"], [".", "PP"], ["A", "DET"], ["letter", "NN"], ["was", "VBD"], ["written", "VBN"], [".", "PP"]]
-        
-        def tokenize
+        def words_with_parts_of_speech_tags 
             Tokenizer.parts_of_speech_tagger.
                 add_tags(input_text).
                 scan(/\<(?<tag>\w+)>(?<text>[^(<\)]+)</).

@@ -8,7 +8,7 @@ module Style
                     links = sentence.scan(URL_REGEX)
                     links.each do |url|
                         begin
-                            attempt_to_visit_url
+                            attempt_to_visit_url(url)
                             # socket error occurs if link is bad
                         rescue SocketError
                             create_problem("Url #{url} does not work")

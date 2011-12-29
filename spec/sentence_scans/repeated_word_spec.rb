@@ -1,20 +1,21 @@
 require "spec_helper"
 module Style
-  module SentenceScans
-    describe RepeatedWord do
-      let(:consecutive_repeated_words) {Sentence.new "I went went to the shop"}
-      let(:consecutive_repeated_words_capitalized1) {Sentence.new "I went Went to the shop"}
-      let(:consecutive_repeated_words_capitalized2) {Sentence.new "I Went went to the shop"}
+    module SentenceScans
+        describe RepeatedWord do
+            let(:double_nice) {Sentence.new "It was a nice place, and all the people were nice."}
+            let(:consecutive_nice) {Sentence.new "It was a nice nice place."}
+            let(:the) {Sentence.new "All through the night leaves were falling, and the moon was dark."}
 
-      context "#scan" do
-        it "should remove words repeated in a row" do
-          should_problem consecutive_repeated_words, Problems::RepeatedWord, "I went to the shop"
+            it "flags using the word nice twice" do
+               should_problem double_nice, Problems::RepeatedWord
+            end
+            it "doesn't flag where you have the word consecutively (since this is a separate error)" do
+                should_not_problem consecutive_nice, Problems::RepeatedWord
+            end
+            it "doesn't flag common words like 'the'" do
+                should_not_problem the, Problems::RepeatedWord
+            end
         end
-        it "removes words repeated in a row where one is capitalized" do
-          should_problem consecutive_repeated_words_capitalized1, Problems::RepeatedWord, "I went to the shop"
-          should_problem consecutive_repeated_words_capitalized2, Problems::RepeatedWord, "I went to the shop"
-        end
-      end
+
     end
-  end
 end

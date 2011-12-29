@@ -13,14 +13,14 @@ module Style
         it "is delimited by \ so that cut command will work in linux" do
           subject.user_friendly_readout.split("|").size.should == 3
         end
-        it "shows stringified problem name first" do
-          subject.user_friendly_readout.split("|")[0].strip.should == "Base"
+        it "shows stringified problem name first (taking into colorization)" do
+          subject.user_friendly_readout.split("|")[0].strip.should match "Base"
         end
         it "shows problem sentence second" do
-          subject.user_friendly_readout.split("|")[1].strip.should == "I really like tomatoes."
+          subject.user_friendly_readout.split("|")[1].strip.should match "I really like tomatoes."
         end
         it "shows offending text third" do
-          subject.user_friendly_readout.split("|")[2].strip.should == "really"
+          subject.user_friendly_readout.split("|")[2].strip.should match "really"
         end
       end
 
