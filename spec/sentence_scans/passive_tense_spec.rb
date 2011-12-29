@@ -97,23 +97,23 @@ module Style
                 end
 
                 it "doesnt catches active_past_progressive" do
-                    should_problem active_past_progressive, Problems::PassiveTense
+                    should_not_problem active_past_progressive, Problems::PassiveTense
                 end
 
                 it "doesnt catches active_past_perfect" do
-                    should_problem active_past_perfect, Problems::PassiveTense
+                    should_not_problem active_past_perfect, Problems::PassiveTense
                 end
 
                 it "doesnt catches active_present_perfect" do
-                    should_problem active_present_perfect, Problems::PassiveTense
+                    should_not_problem active_present_perfect, Problems::PassiveTense
                 end
 
                 it "doesnt catches active_conditional_1" do
-                    should_problem active_conditional_1, Problems::PassiveTense
+                    should_not_problem active_conditional_1, Problems::PassiveTense
                 end
 
                 it "doesnt catches active_conditional_2" do
-                    should_problem active_conditional_2, Problems::PassiveTense
+                    should_not_problem active_conditional_2, Problems::PassiveTense
                 end
 
             end

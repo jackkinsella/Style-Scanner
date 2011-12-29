@@ -11,7 +11,7 @@ module Style
             Tagger.parts_of_speech_tagger.
                 add_tags(input_text).
                 scan(/\<(?<tag>\w+)>(?<text>[^(<\)]+)</).
-                map {|word_tag_pair| TaggedWord.new(word_tag_pair)}
+                map {|tag, word| TaggedWord.new(tag,word)}
         end
 
         class << self

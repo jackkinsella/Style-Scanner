@@ -36,6 +36,10 @@ module Style
         @tagged_words ||= Tagger.new(sentence.text).tagged_words
       end
 
+      def next_word(word)
+        tagged_words.at(tagged_words.index(word) + 1)
+      end
+
       def part_of_speech(code)
         words_with_parts_of_speech_tags.select {|k,v| v== code}.map &:first
       end

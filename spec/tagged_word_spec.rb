@@ -2,7 +2,7 @@ require 'spec_helper'
 module Style
     describe TaggedWord do
 
-        subject {TaggedWord.new(["Hound-dog", "nn"])}
+        subject {TaggedWord.new("nn", "Hound-dog")}
 
         context "#word" do
             it "the original word" do

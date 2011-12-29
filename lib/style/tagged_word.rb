@@ -3,9 +3,9 @@ module Style
 
         attr_reader :tag, :word
         
-        def initialize(word_tag_pair)
-            @word = word_tag_pair[0]
-            @tag = word_tag_pair[1].upcase
+        def initialize(tag, word)
+            @tag = tag.upcase
+            @word = word 
         end
 
         def tokenized_word
