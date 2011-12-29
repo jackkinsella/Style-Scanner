@@ -4,6 +4,7 @@
 require "log_buddy"
 require "punkt-segmenter"
 require 'colorize'
+require "engtagger"
 require "net/http"
 
 #external setups

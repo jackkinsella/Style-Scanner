@@ -32,7 +32,7 @@ module Style
     def self.dynamically_generate_problem_classes
        problem_class_names_from_dir.each do |problem_class_name|
         eval %Q{ class #{problem_class_name} < Base
-          end}
+                 end}
       end
     end
 
