@@ -32,8 +32,8 @@ module Style
       end
 
       # We retokenize for the text case where no overall scanner is prepared
-      def words_with_parts_of_speech_tags 
-        @words_with_parts_of_speech_tags ||= sentence.respond_to?(:scanner) ? scanner.tokenized_text : Tagger.new(sentence.text).words_with_parts_of_speech_tags
+      def tagged_words
+        @tagged_words ||= Tagger.new(sentence.text).tagged_words
       end
 
       def part_of_speech(code)

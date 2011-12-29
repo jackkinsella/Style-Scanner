@@ -4,21 +4,19 @@ module Style
           
         # heuristic: A "BE" verb follwed by a verb other than a gerund
         def scan
-           passive = words_with_parts_of_speech_tags.drop_while {|word_and_tag| ! be_verb(word_and_tag)}
-           create_problem(passive[0][0]) if passive.any?
+           passive = tagged_words.drop_while {|tagged_word| ! be_verb(tagged_word) && next_word_non_gerund_verb(tagged_word) }.first
+           create_problem(passive.word) if passive
         end
 
         private
 
-        def be_verb(word_and_tag)
-          tag = word_and_tag[1]
-          word = word_and_tag[0]
-          ["is", "was", "been", "be"].include?(word.downcase) && tag.start_with?("V")
+        def be_verb(tagged_word)
+          ["is", "was", "been", "be"].include?(tagged_word.tokenized_word) && tagged_word.tag.start_with?("V")
         end
 
-        def non_gerund_verb(word_and_tag)
-          tag = word_and_tag[1]
-          tag.start_with? "V" && tag != "VBG"
+        def next_word_non_gerund_verb(tagged_word)
+          # tagged_word.tag.start_with? "V" && tagged_word.tag != "VBG"
+            true
         end
 
           

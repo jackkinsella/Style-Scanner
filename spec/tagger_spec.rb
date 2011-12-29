@@ -3,9 +3,11 @@ module Style
     describe Tagger do
         let(:input) {"I am a wicked child."}
 
-        context "#words_with_parts_of_speech_tags" do
-            it "returns an array of words with their tags" do
-                Tagger.new(input).words_with_parts_of_speech_tags.should == [["I", "PRP"], ["am", "VBP"], ["a", "DET"], ["wicked", "JJ"], ["child", "NN"],[".", "PP"]]
+        context "#tagged_words" do
+            it "returns an array of tagged words object" do
+                tagged_words = Tagger.new(input).tagged_words
+                tagged_words.count.should == 6
+                tagged_words.first.kind_of?(TaggedWord).should be_true
             end
         end
     end

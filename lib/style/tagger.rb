@@ -7,11 +7,11 @@ module Style
             @input_text = input_text
         end
 
-        def words_with_parts_of_speech_tags 
+        def tagged_words 
             Tagger.parts_of_speech_tagger.
                 add_tags(input_text).
                 scan(/\<(?<tag>\w+)>(?<text>[^(<\)]+)</).
-                map {|tag, word| [word, tag.upcase ] }
+                map {|word_tag_pair| TaggedWord.new(word_tag_pair)}
         end
 
         class << self
