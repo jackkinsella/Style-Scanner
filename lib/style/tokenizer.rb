@@ -1,5 +1,5 @@
 module Style
-    class Tokenizer
+    class Tagger
 
         attr_reader :input_text
 
@@ -8,7 +8,7 @@ module Style
         end
 
         def words_with_parts_of_speech_tags 
-            Tokenizer.parts_of_speech_tagger.
+            Tagger.parts_of_speech_tagger.
                 add_tags(input_text).
                 scan(/\<(?<tag>\w+)>(?<text>[^(<\)]+)</).
                 map {|tag, word| [word, tag.upcase ] }
