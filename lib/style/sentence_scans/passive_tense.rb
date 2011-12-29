@@ -15,8 +15,8 @@ module Style
         end
 
         def next_word_non_gerund_verb(tagged_word)
-          # tagged_word.tag.start_with? "V" && tagged_word.tag != "VBG"
-            true
+          next_tagged_word = tagged_words.at(tagged_words.index(tagged_word) + 1)
+          next_tagged_word.tag.start_with? "V" && next_tagged_word.tag != "VBG"
         end
 
           
