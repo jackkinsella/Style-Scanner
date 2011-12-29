@@ -13,7 +13,7 @@ module Style
             private
 
             def non_punctuation_tokens
-
+              words_with_parts_of_speech_tags.map(&:tokenized_word)
             end
 
 

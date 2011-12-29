@@ -13,14 +13,6 @@ module Style
             sentence.text.should == "Sentence Number 2"
         end
 
-        context "#initialize" do
-            it "reads a file if given one" do
-              file = File.dirname(__FILE__) + "/fixtures/sample_text.txt"
-              scanner = Scanner.new(file)
-              scanner.input_text.should == File.read(file)
-            end
-        end
-
         context "#scan" do
             it "calls a variety of scans on its sentences" do
                 SentenceScans::UselessWord.should_receive(:scan).with(an_instance_of(Sentence)).twice.and_return(double(:sentence))

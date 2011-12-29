@@ -16,7 +16,7 @@ module Style
         Results.user_friendly_readout(sentences).split("\n").size.should == 1
       end
       it "contains the user_friendly_readout of the problem" do
-        Results.user_friendly_readout(sentences).should match(problem.user_friendly_readout)
+        Results.user_friendly_readout(sentences).should match(problem.user_friendly_readout.to_s)
       end
     end
   end
