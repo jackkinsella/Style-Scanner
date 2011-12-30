@@ -4,7 +4,7 @@ module Style
         describe Base do
             let(:sentence) {Sentence.new("I am a dog.")}
 
-            it ".scan" do
+            context ".scan" do
                 it "initializes a new instance of itself and calls scan" do
                     new_scanner = double(:base).as_null_object
                     Base.should_receive(:new).and_return(new_scanner)

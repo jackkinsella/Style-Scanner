@@ -5,7 +5,7 @@ module Style
       let(:adverb) {Sentence.new "He ran quickly."}
       context "#scan" do
         it "removes 'quickly' from ran quickly" do
-          should_problem adverb, Problems::Adverb, "He ran."
+          should_problem adverb, Problems::Adverb
         end
       end
     end
