@@ -11,7 +11,7 @@ module Style
 
     def scan 
       sentences.each do |sentence|
-        [SentenceScans::UselessWord, SentenceScans::UglyWord,
+        [SentenceScans::UselessWord, SentenceScans::UglyWord, SentenceScans::Spelling,
           SentenceScans::ConsecutivelyRepeatedWord, SentenceScans::PassiveTense,
           SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink, SentenceScans::RepeatedWord,
           SentenceScans::Adverb, SentenceScans::SpeakingInGeneralities].each do |scanner_type|

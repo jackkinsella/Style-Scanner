@@ -14,7 +14,7 @@ module Style
             private
 
             def mispellings
-                `echo #{sentence} | hunspell -l -d #{DICTIONARY}`.split("\n")
+                `echo '#{sentence.text}' | hunspell -l -d #{DICTIONARY}`.split("\n")
             end
 
         end
