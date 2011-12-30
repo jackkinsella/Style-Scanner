@@ -93,7 +93,7 @@ module Style
                 end
 
                 it "doesnt catches active_present_progressive" do
-                    should_problem active_present_progressive, Problems::PassiveTense
+                    should_not_problem active_present_progressive, Problems::PassiveTense
                 end
 
                 it "doesnt catches active_past_progressive" do
