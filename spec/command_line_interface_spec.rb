@@ -6,8 +6,8 @@ module Style
         let(:file) {Dir.pwd + "/spec/fixtures/sample_text.txt"}
         let(:scanner) {double(:scanner)}
 
-        it "works with a sentence" do
-          system("style '#{text}'").should be_true
+        it "works with an echoed sentence" do
+          system("echo '#{text}' | style").should be_true
         end
         it "works with a file" do
             system("style #{file}").should be_true
