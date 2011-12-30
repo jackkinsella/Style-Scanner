@@ -41,7 +41,7 @@ module Style
       end
 
       def part_of_speech(code)
-        tagged_words.select {|tagged_word| tagged_word.tag == code }
+        tagged_words.select {|tagged_word| tagged_word.tag == code }.map &:word
       end
 
       def already_has_that_problem_on_text(offending_text)
