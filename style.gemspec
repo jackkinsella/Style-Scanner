@@ -21,6 +21,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
   gem.add_development_dependency "ruby-debug19"
-  gem.add_development_dependency "log_buddy"
   gem.add_development_dependency "looksee"
 end
