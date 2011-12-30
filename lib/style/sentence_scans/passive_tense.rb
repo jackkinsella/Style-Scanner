@@ -15,7 +15,7 @@ module Style
         end
 
         def gerund_verb(word)
-          word && word.tag.start_with?("V") && word.tag == "VBG"
+          word && word.tag.start_with?("V") && word.tag == "VBG" && word.tokenized_word != "being"
         end
 
           
