@@ -1,3 +1,64 @@
+h3. Style
+
+Style, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by the likes of Stunck & White, Bill Bryson, and Geroge Orwell, style scans your text and markup files, (e.g. html and textile files), then prints out a list of issues found within your text. Currently the issues spotted include:
+
+* Usage of 11 different forms of passive tense.
+ The letter was sent
+* Broken Links
+http://www.thiswebsite404s.com
+* Ugly words
+The government utilized the resources.
+* Speaking in generalities
+Many people think that
+* Useless words
+It was a very fast app.
+* Repeating the same non structural word within a sentence
+Trask makes an excellent point, forcefully and with taste, in his excellent work 'Mind The Gaffe'
+* Using latin abbreviations within your text
+E.g.
+* Spelling mistakes
+addd
+* Repeating the same word consecutively 
+We went to the the shopping centre.
+* Excess white space
+We went   to the shopping centre.
+
+Please note that linguistic analysis is a hard problem, so you cannot expect perfect results. Think of style as guidelines to steer you in the righ t direction.
+
+h3. Installation 
+
+Install Style using Ruby gems:
+
+gem install style
+
+Next you'll need to install hunspell, an open source spell checker which Style depends upon
+
+brew install hunspell
+
+h3. Usage
+
+Style is command line only. Cd into the directory with the files you'd like to scan, then type 
+
+h3. Licence
+
+h3. Dependencies
+
+punkt-segmenter splits text into sentences.
+colorize formats terminal output in red,green and other colours.
+entagger 
+
+h3. Roadmap
+
+1 Handle html and textile
+2 Refactor the collection methods
+3 Capitalization issues
+4 Cliche scanner
+5 More useless words
+6 Troublesome words from Stunk
+7 Refactor i.e. to use tokenized stuff
+8 Refactory next word stuff
+
+
 Setup
 python
 nltk.download('maxent_treebank_pos_tagger');
@@ -24,4 +85,5 @@ RepeatedWord | We were really happy.
  | we
 Adverb | We were really happy.
  | really
+
 
