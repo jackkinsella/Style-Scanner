@@ -73,6 +73,8 @@ Contribution is welcomed and encouraged, although no modifications will be accep
 
 h2. Roadmap
 
+0 Make faster using threading and staggered output 
+
 1 Handle HTML and textile files.
 2 Refactor the collection methods.
 3 Capitalization issues -- global fix needed.

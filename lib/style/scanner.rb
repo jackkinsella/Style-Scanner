@@ -14,8 +14,8 @@ module Style
         all_possible_scans.each do |scanner_type|
           scanner_type.scan(sentence)
         end
+        puts sentence.user_friendly_readout 
       end
-      Results.user_friendly_readout(sentences)
     end
 
     def find_sentence(text)

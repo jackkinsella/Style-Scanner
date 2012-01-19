@@ -21,6 +21,10 @@ module Style
       text_to_scan.downcase.match /\b#{word}\b/
     end
 
+    def user_friendly_readout
+       problems.flatten.map(&:user_friendly_readout) if with_problems?
+    end
+
     def add_problem(problem)
       problems << problem
     end
