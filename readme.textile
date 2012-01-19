@@ -31,7 +31,7 @@ Install Style using Ruby gems:
 
 @gem install style@
 
-Next install Hunspell, an open source spell-checker which Style depends upon.
+Next install Hunspell, an open source spell-checker that Style depends upon.
 
 @brew install hunspell@
 
@@ -45,10 +45,7 @@ After a few seconds Style will print a list problems it finds.
 
 Style is pipe friendly. 
 
-
-@style filename@
-
-After a few seconds Style will print a list problems it finds.
+@cat filename | style@
 
 h2. Licence
 
@@ -94,6 +91,11 @@ Formats terminal output in red,green and other colours.
 
 "entagger":http://engtagger.rubyforge.org/
 Assigns parts of speech tags to English text based on a lookup dictionary and a set of probability values.
+
+h3. Other
+
+"Hunspell":http://hunspell.sourceforge.net/
+An open source spell checker used by Open Office, Mozilla Firefox and Google Chrome.
 
 h2. Roadmap
 
