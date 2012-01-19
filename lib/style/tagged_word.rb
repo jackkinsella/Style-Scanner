@@ -9,7 +9,7 @@ module Style
         end
 
         def tokenized_word
-            word.downcase.gsub(/\W/, "")
+          word.downcase.gsub(/\W/, "")
         end
 
     end

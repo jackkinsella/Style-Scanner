@@ -8,7 +8,7 @@ module Style
 
       def scan
         stemmed_cliches.each do |cliche|
-          create_problem("GOTCHA") if sentence.contains?(cliche)
+          create_problem("GOTCHA") if sentence.contains?(cliche, :stem_verbs => true)
         end
       end
 
@@ -16,16 +16,9 @@ module Style
 
       def stemmed_cliches
         CLICHES.map do |cliche| 
-           cliche.split.map do |word|
-             is_a_verb?(word) ? word.stem : word
-           end.join(" ")
+          cliche.stem_verbs(sentence)
         end
       end
-
-      def is_a_verb?(word)
-        Tagger.new(word).tagged_words.first.tag.start_with?("V")
-      end
-
     end
   end
 end

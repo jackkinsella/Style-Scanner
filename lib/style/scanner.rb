@@ -9,7 +9,6 @@ module Style
       @sentences = split_into_sentences
     end
 
-    #TODO: This algorithm is N2. Speed up!
     def scan 
       sentences.each do |sentence|
         all_possible_scans.each do |scanner_type|
