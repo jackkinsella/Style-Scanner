@@ -65,6 +65,10 @@ h3. Other
 "Hunspell":http://hunspell.sourceforge.net/
 An open source spell checker used by Open Office, Mozilla Firefox and Google Chrome.
 
+h2. Contributing
+
+Contribution is welcomed and encouraged, although no modifications will be accepted if they are not accompanied by passing tests.
+
 h2. Roadmap
 
 1 Handle HTML and textile files.
