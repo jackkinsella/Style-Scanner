@@ -26,6 +26,8 @@ module Style
             let(:active_conditional_2) {Sentence.new "Rite would have written."}
             let(:active_state_with_article) {Sentence.new("The duke is a gonzo journalist sent")}
 
+            let(:active_state_with_possessive) {Sentence.new("The duke is our saviour.")}
+
             context "#scan" do
                 it "catches present passives" do
                     should_problem present, Problems::PassiveTense
@@ -116,8 +118,12 @@ module Style
                     should_not_problem active_conditional_2, Problems::PassiveTense
                 end
 
-                it "doesnt catch active state of being" do
+                it "doesnt catch active state with article" do
                   should_not_problem active_state_with_article, Problems::PassiveTense
+                end
+
+                it "doesnt catch active state with possessive" do
+                  should_not_problem active_state_with_possessive, Problems::PassiveTense
                 end
 
             end
