@@ -47,38 +47,6 @@ Style is pipe friendly.
 
 @cat filename | style@
 
-h2. Licence
-
-h2. Dependencies
-
-h3. Gems
-
-"punkt-segmenter":https://github.com/lfcipriani/punkt-segmenter 
-Splits text into sentences.
-
-"colorize":https://github.com/fazibear/colorize 
-Formats terminal output in red,green and other colours.
-
-"entagger":http://engtagger.rubyforge.org/
-Assigns parts of speech tags to English text based on a lookup dictionary and a set of probability values.
-
-h2. Roadmap
-
-1 Handle HTML and textile files.
-2 Refactor the collection methods.
-3 Capitalization issues.
-4 Cliche scanner.
-5 More useless words.
-6 Troublesome words from Stunk.
-7 Refactor i.e. to use tokenized stuff.
-8 Refactory next word stuff.
-
-h2. Big Issues
-
-➜  style git:(master) ✗ echo "The kitchen table had been set. We were really happy." | be style@
-
-h2. Licence
-
 h2. Dependencies
 
 h3. Gems
@@ -120,3 +88,9 @@ RepeatedWord | We were really happy.
  | we
 Adverb | We were really happy.
  | really
+
+h2. Licence
+
+Style is released under the "MIT license":www.opensource.org/licenses/MIT
+Copyright "Jack Kinsella":www.jackkinsella.ie
+
