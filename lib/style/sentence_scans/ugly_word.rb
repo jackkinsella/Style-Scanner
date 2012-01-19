@@ -6,7 +6,7 @@ module Style
       "transpire" => "happen", "thusly" => "thus", "whilst" => "while", "tackle" => "solve"}
 
       def scan
-        capitalized_word_pairs.keys.each do |offender|
+        WORD_PAIRS.keys.each do |offender|
           create_problem(replacement_word(offender)) if sentence.contains?(offender) 
         end
       end

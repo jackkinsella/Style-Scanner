@@ -33,7 +33,6 @@ module Style
         [dot_between_all_but_last, dot_at_end(dot_between_all_but_last)]
       end
 
-
     end
   end
 end

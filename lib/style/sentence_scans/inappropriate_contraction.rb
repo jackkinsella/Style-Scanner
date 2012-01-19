@@ -10,7 +10,7 @@ module Style
             "they'll" => "they will", "we'll" => "we will"}
 
             def scan
-                capitalized_word_pairs.keys.each do |offender|
+                WORD_PAIRS.keys.each do |offender|
                     create_problem(replacement_word(offender)) if sentence.contains?(offender)
                 end
             end

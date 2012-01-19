@@ -19,10 +19,6 @@ module Style
         word_pairs = self.class::WORD_PAIRS
       end
 
-      def capitalized_word_pairs
-        add_capitalizeds(word_pairs)
-      end
-
       def replacement_word(offending_word)
         word_pairs[offending_word]
       end
