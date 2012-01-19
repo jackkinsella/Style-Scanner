@@ -3,4 +3,4 @@ require "style"
 
 puts "=> Scanning for spelling error and style problems. May take a minute.\n".green
 puts ["Problem Type".red, "Original Sentence".green, "Offending Word".yellow].join(" | ")
-puts Style::Scanner.new(ARGF.read).scan
+Style::Scanner.new(ARGF.read).scan
