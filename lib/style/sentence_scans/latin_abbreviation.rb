@@ -17,9 +17,9 @@ module Style
       private
 
       def dot_placement_permutations(abbreviations)
-        add_capitalizeds(abbreviations.map do |abbr|
+        abbreviations.map do |abbr|
           [abbr, dot_at_end(abbr), dot_between_every_letter(abbr)]
-        end, :all_caps => true).flatten
+        end.flatten
       end
 
       def dot_at_end(abbr)

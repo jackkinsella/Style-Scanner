@@ -23,10 +23,6 @@ module Style
         add_capitalizeds(word_pairs)
       end
 
-      def add_capitalizeds(words, options = {})
-        CollectionCapitalizer.new(words).capitalize(:all_caps => true)
-      end
-
       def replacement_word(offending_word)
         word_pairs[offending_word]
       end
