@@ -6,18 +6,17 @@ module Style
       CLICHES = IO.read(CLICHES_FILE_LOCATION).split("\n")
 
       def scan
-        stemmed_cliches.each do |cliche|
-          create_problem(cliche) if sentence.contains?(cliche, :stem_verbs => true)
+        Cliche.stemmed_cliches.each.with_index do |cliche, index|
+          create_problem(CLICHES[index]) if sentence.contains?(cliche, :stem_verbs => true)
         end
       end
 
-      private 
-
-      def stemmed_cliches
-        CLICHES.map do |cliche| 
-          cliche.stem_verbs
-        end
+      def self.stemmed_cliches
+        @@stemmed_cliches ||= CLICHES.map do |cliche| 
+            cliche.stem_verbs
+         end
       end
+
     end
   end
 end
