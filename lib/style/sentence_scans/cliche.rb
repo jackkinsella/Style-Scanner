@@ -5,10 +5,9 @@ module Style
       CLICHES_FILE_LOCATION = File.expand_path("../../../dictionaries/cliches.txt", __FILE__)
       CLICHES = IO.read(CLICHES_FILE_LOCATION).split("\n")
 
-
       def scan
         stemmed_cliches.each do |cliche|
-          create_problem("GOTCHA") if sentence.contains?(cliche, :stem_verbs => true)
+          create_problem(cliche) if sentence.contains?(cliche, :stem_verbs => true)
         end
       end
 
@@ -16,7 +15,7 @@ module Style
 
       def stemmed_cliches
         CLICHES.map do |cliche| 
-          cliche.stem_verbs(sentence)
+          cliche.stem_verbs
         end
       end
     end

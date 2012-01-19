@@ -20,6 +20,8 @@ module Style
 
     def tag(word)
       Tagger.new(self).tagged_words.find {|tagged_word| tagged_word.word == word}.tag
+    rescue NoMethodError
+      "Unknown"
     end
 
   end
