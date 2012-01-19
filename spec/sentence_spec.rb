@@ -52,6 +52,7 @@ module Style
         flossed.contains?("floss", :stem_verbs => true).should be_true
       end
     end
+
     context "#to_s" do
       it "displays the text" do
         subject.to_s.should match text
@@ -60,6 +61,7 @@ module Style
         subject.to_s.should match /Sentence Obj/
       end
     end
+
     context "#find_problems_by_type" do
       it "finds the problem according to its class" do
         subject.add_problem(repeated_word_problem)
@@ -69,5 +71,6 @@ module Style
         found_problems.first.class.should == Problems::UglyWord 
       end
     end
+
   end
 end
