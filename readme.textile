@@ -2,25 +2,25 @@ h1. Style
 
 Style, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk & White, Bill Bryson and Geroge Orwell, Style scans your text and markup files then lists issues found. Currently it spots the following problems:
 
-* Usage of 11 different forms of passive tense.
+* *Usage of 11 different forms of passive tense.*
  The letter was sent
-* Broken links
+* *Broken links*
 http://www.thiswebsite404s.com
-* Ugly words
+* *Ugly words*
 The government utilized the resources.
-* Speaking in generalities
+* *Speaking in generalities*
 Many people think that
-* Useless words
+* *Useless words*
 It was a very fast app.
-* Repeating the same non structural word within a sentence
+* *Repeating the same non structural word within a sentence*
 Trask makes an excellent point, forcefully and with taste, in his excellent work 'Mind The Gaffe'
-* Using latin abbreviations within your text
+* *Using latin abbreviations within your text*
 E.g.
-* Spelling mistakes
+* *Spelling mistakes*
 addd
-* Repeating the same word consecutively 
+* *Repeating the same word consecutively* 
 We went to the the shopping centre.
-* Excess white space
+* *Excess white space*
 We went   to the shopping centre.
 
 _Linguistic analysis is a hard problem, so you cannot expect perfect results. Think of Style as guidelines to steer you in the right direction._
