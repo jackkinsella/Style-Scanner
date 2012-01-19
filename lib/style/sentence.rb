@@ -16,7 +16,7 @@ module Style
     end
 
     def contains?(word)
-      text.match /\b#{word}\b/
+      text.downcase.match /\b#{word}\b/
     end
 
     def add_problem(problem)
