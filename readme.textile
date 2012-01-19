@@ -1,10 +1,10 @@
 h1. Style
 
-Style, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk & White, Bill Bryson and Geroge Orwell, Style scans your text and markup files then lists any issues it found within your text. Currently it spots:
+Style, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk & White, Bill Bryson and Geroge Orwell, Style scans your text and markup files then lists issues found. Currently it spots the following problems:
 
 * Usage of 11 different forms of passive tense.
  The letter was sent
-* Broken Links
+* Broken links
 http://www.thiswebsite404s.com
 * Ugly words
 The government utilized the resources.
@@ -23,7 +23,7 @@ We went to the the shopping centre.
 * Excess white space
 We went   to the shopping centre.
 
-Please note that linguistic analysis is a hard problem, so you cannot expect perfect results. Think of style as guidelines to steer you in the righ t direction.
+_Linguistic analysis is a hard problem, so you cannot expect perfect results. Think of Style as guidelines to steer you in the right direction._
 
 h2. Installation 
 
@@ -31,13 +31,24 @@ Install Style using Ruby gems:
 
 @gem install style@
 
-Next you'll need to install hunspell, an open source spell checker which Style depends upon
+Next install Hunspell, an open source spell-checker which Style depends upon.
 
 @brew install hunspell@
 
 h2. Usage
 
 Style is command line only. Cd into the directory with the files you'd like to scan, then type 
+
+@style filename@
+
+After a few seconds Style will print a list problems it finds.
+
+Style is pipe friendly. 
+
+
+@style filename@
+
+After a few seconds Style will print a list problems it finds.
 
 h2. Licence
 
@@ -65,7 +76,37 @@ h2. Roadmap
 7 Refactor i.e. to use tokenized stuff.
 8 Refactory next word stuff.
 
-# Big Issues
+h2. Big Issues
+
+➜  style git:(master) ✗ echo "The kitchen table had been set. We were really happy." | be style@
+
+h2. Licence
+
+h2. Dependencies
+
+h3. Gems
+
+"punkt-segmenter":https://github.com/lfcipriani/punkt-segmenter 
+Splits text into sentences.
+
+"colorize":https://github.com/fazibear/colorize 
+Formats terminal output in red,green and other colours.
+
+"entagger":http://engtagger.rubyforge.org/
+Assigns parts of speech tags to English text based on a lookup dictionary and a set of probability values.
+
+h2. Roadmap
+
+1 Handle HTML and textile files.
+2 Refactor the collection methods.
+3 Capitalization issues.
+4 Cliche scanner.
+5 More useless words.
+6 Troublesome words from Stunk.
+7 Refactor i.e. to use tokenized stuff.
+8 Refactory next word stuff.
+
+h2. Big Issues
 
 ➜  style git:(master) ✗ echo "The kitchen table had been set. We were really happy." | be style
 => Scanning for spelling error and style problems. May take a minute.
