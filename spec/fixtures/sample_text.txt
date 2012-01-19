@@ -1,12 +1,11 @@
 Making a cliché scanner is easier said than done. The devil is really in the details. 
 
-Today Rob Dooley and I worked balls to the ball to wall to build software that could catch clichés in all their shapes and forms. In many ways it was a real baptism of fire, but we pulled through in the end.
+Today Rob Dooley and I worked balls to the balls to the wall to build software that could catch clichés in all their shapes and forms. In many ways it was a real baptism of fire, but we pulled through in the end.
 
-It goes without saying that hard work pays off, and I think that this
-software could be a real game changer.
+It goes without saying that hard work pays off, and that this software
+pushes the envelope.
 
-So get on the bandwagon, and improve your writing by leaps and bounds
-with my brand new style scanner soon to be released under an MIT license.
-
+So get get on the bandwagon, and improve your writing by leaps and
+bounds by utilizing my brand new style scanner, soon to be released under an MIT license.
 
 -- Jack

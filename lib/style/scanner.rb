@@ -14,7 +14,7 @@ module Style
         all_possible_scans.each do |scanner_type|
           scanner_type.scan(sentence)
         end
-        puts sentence.user_friendly_readout 
+         puts sentence.user_friendly_readout 
       end
     end
 
@@ -35,9 +35,9 @@ module Style
 
     def all_possible_scans 
       [SentenceScans::UselessWord, SentenceScans::UglyWord, SentenceScans::Spelling,
-      SentenceScans::ConsecutivelyRepeatedWord, SentenceScans::PassiveTense,
-      SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink, SentenceScans::RepeatedWord,
-      SentenceScans::Adverb, SentenceScans::SpeakingInGeneralities, SentenceScans::Cliche]
+      SentenceScans::ConsecutivelyRepeatedWord,
+      SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink, SentenceScans::UsedWordAlreadyInSentence,
+      SentenceScans::SpeakingInGeneralities, SentenceScans::Cliche, SentenceScans::Adverb, SentenceScans::PassiveTense]
     end
 
   end

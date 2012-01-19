@@ -1,7 +1,7 @@
 require "spec_helper"
 module Style
     module SentenceScans
-        describe RepeatedWord do
+        describe UsedWordAlreadyInSentence do
             let(:double_nice) {Sentence.new "It was a nice place, and all the people were nice."}
             let(:consecutive_nice) {Sentence.new "It was a nice nice place."}
             let(:the) {Sentence.new "All through the night leaves were falling, and the moon was dark."}

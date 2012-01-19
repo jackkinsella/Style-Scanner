@@ -12,6 +12,10 @@ module Style
       end.join(" ")
     end
 
+    def titlecase
+      scan(/[A-Z][a-z]*/).join(" ") 
+    end
+
     private
 
     def is_a_verb?(word)

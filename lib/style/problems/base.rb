@@ -19,7 +19,7 @@ module Style
       private
 
       def problem_name
-        self.class.to_s.gsub(/Style::Problems::/,"")
+        self.class.to_s.gsub(/Style::Problems::/,"").titlecase
       end
 
     end
