@@ -38,6 +38,7 @@ module Style
     end
 
     context "#contains?" do
+      let(:flossed) {Sentence.new("I flossed my teeth")}
       it "true if a word is contained within the text" do
         subject.contains?("shopping").should be_true
       end
@@ -46,6 +47,9 @@ module Style
       end
       it "false if only part of a word" do
         subject.contains?("mas").should be_false
+      end
+      it "stems verbs if option is passed" do
+        flossed.contains?("floss", :stem_verbs => true).should be_true
       end
     end
     context "#to_s" do

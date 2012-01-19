@@ -15,8 +15,10 @@ module Style
       @problems.select {|problem| problem.class == problem_type}
     end
 
-    def contains?(word)
-      text.downcase.match /\b#{word}\b/
+    def contains?(word, options = {})
+      text_to_scan = text
+      text_to_scan = text_to_scan.stem_verbs if options[:stem_verbs]
+      text_to_scan.downcase.match /\b#{word}\b/
     end
 
     def add_problem(problem)
