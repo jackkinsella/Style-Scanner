@@ -38,7 +38,7 @@ module Style
       [SentenceScans::UselessWord, SentenceScans::UglyWord, SentenceScans::Spelling,
       SentenceScans::ConsecutivelyRepeatedWord, SentenceScans::PassiveTense,
       SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink, SentenceScans::RepeatedWord,
-      SentenceScans::Adverb, SentenceScans::SpeakingInGeneralities]
+      SentenceScans::Adverb, SentenceScans::SpeakingInGeneralities, SentenceScans::Cliche]
     end
 
   end
