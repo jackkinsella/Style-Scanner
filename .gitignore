@@ -1,6 +1,6 @@
 *.gem
 *.rbc
-lib/dictionaries/*
+lib/dictionaries/en_US*
 .bundle
 .config
 .yardoc

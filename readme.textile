@@ -93,6 +93,11 @@ RepeatedWord | We were really happy.
 Adverb | We were really happy.
  | really
 
+h2. Contributors
+
+Jack Kinsella
+Robert Dooley, Developer in Galway Western Ireland
+
 h2. Licence
 
 Style is released under the "MIT license":www.opensource.org/licenses/MIT

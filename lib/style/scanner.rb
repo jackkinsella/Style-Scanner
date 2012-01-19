@@ -1,7 +1,6 @@
 module Style
   class Scanner 
 
-
     attr_reader :input_text, :sentences
     attr_accessor :finished_text
 
@@ -17,7 +16,6 @@ module Style
           scanner_type.scan(sentence)
         end
       end
-
       Results.user_friendly_readout(sentences)
     end
 
