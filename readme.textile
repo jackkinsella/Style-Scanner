@@ -73,9 +73,10 @@ Contribution is welcomed and encouraged, although no modifications will be accep
 
 h3. Parts of Speech
 
-  CC      Conjunction, coordinating               and, or
-  CD      Adjective, cardinal number              3, fifteen
-  DET     Determiner                              this, each, some
+ | Tag | Part Of Speech | Examples |
+  |CC      | Conjunction, coordinating |              and, or |
+  | CD      | Adjective, cardinal number              | 3, fifteen |
+  | DET     | Determiner                              | this, each, some |
   EX      Pronoun, existential there              there
   FW      Foreign words
   IN      Preposition / Conjunction               for, of, although, that
@@ -109,7 +110,6 @@ h3. Parts of Speech
   WP      Pronoun, question                       who, whoever
   WPS     Determiner, possessive & question       whose
   WRB     Adverb, question                        when, how, however
-
   PP      Punctuation, sentence ender             ., !, ?
   PPC     Punctuation, comma                      ,
   PPD     Punctuation, dollar sign                $
