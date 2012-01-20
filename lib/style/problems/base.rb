@@ -1,3 +1,4 @@
+# coding: utf-8
 module Style
   module Problems
     class Base
@@ -19,7 +20,9 @@ module Style
       private
 
       def problem_name
-        self.class.to_s.gsub(/Style::Problems::/,"").titlecase
+        unformatted_name = self.class.to_s.gsub(/Style::Problems::/,"").titlecase
+        return "Cliché" if unformatted_name == "Cliche"
+        unformatted_name
       end
 
     end

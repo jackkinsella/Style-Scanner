@@ -27,6 +27,7 @@ module Style
             let(:active_state_with_article) {Sentence.new("The duke is a gonzo journalist sent")}
 
             let(:active_state_with_possessive) {Sentence.new("The duke is our saviour.")}
+            let(:active_state_with_adverb) {Sentence.new("The devil is really in the details.")}
 
             context "#scan" do
                 it "catches present passives" do
@@ -127,7 +128,10 @@ module Style
                 end
 
                 "The devil is really in the details."
-                it "doesnt catch active state with adjective between"
+                it "doesnt catch active state with adjective between" do
+                  should_not_problem active_state_with_adverb, Problems::PassiveTense
+                end
+
 
             end
         end
