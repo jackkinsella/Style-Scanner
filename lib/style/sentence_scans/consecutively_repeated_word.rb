@@ -6,7 +6,7 @@ module Style
 
         def scan
           consecutively_repeated_words.each do |repeated_word|
-            create_problem repeated_word 
+            create_problem("#{repeated_word} #{repeated_word}")
           end 
         end
 
