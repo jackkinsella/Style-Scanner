@@ -87,7 +87,7 @@ h2. Roadmap
 h2. Contributors
 
 Jack Kinsella
-Robert Dooley, Developer in Galway Western, Ireland
+Robert Dooley, developer in Galway Western, Ireland
 
 h2. Licence
 
