@@ -1,8 +1,8 @@
 h1. Style
 
-Style, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk & White, Bill Bryson and Geroge Orwell, Style scans your text and markup files then lists issues found. Currently it spots the following problems:
+Style, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk and White, Bill Bryson and George Orwell, Style scans your text and markup files then lists issues found. Currently it spots the following problems:
 
-* *Use of 600 different cliches*
+* *Use of 600 different clichés*
   He pushed the envelope
 * *Use of 11 different forms of passive tense.*
  The letter was sent
@@ -81,7 +81,7 @@ h2. Roadmap
 4 More useless words.
 5 Troublesome words from Stunk.
 6 Refactor i.e. to use tokenized stuff.
-7 Refactory next word stuff.
+7 Refactor next word stuff.
 8 Tense switches
 
 h2. Contributors
