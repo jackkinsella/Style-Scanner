@@ -2,7 +2,7 @@ require "spec_helper"
 module Style
   describe Sentence do
     let(:text) {"Christmas shopping shopping for a very big dinosaur."}
-    let(:repeated_word_problem) {Problems::RepeatedWord.new("shopping shopping", text)}
+    let(:repeated_word_problem) {Problems::ConsecutivelyRepeatedWord.new("shopping shopping", text)}
     let(:ugly_word_problem) {Problems::UglyWord.new("utilize", text)}
     subject { Sentence.new(text) }
 
@@ -23,7 +23,7 @@ module Style
     context "#add_problem" do
       it "adds an problem to the sentence" do
         subject.add_problem(repeated_word_problem)
-        subject.problems.first.class.should == Problems::RepeatedWord
+        subject.problems.first.class.should == Problems::ConsecutivelyRepeatedWord
       end
     end
 

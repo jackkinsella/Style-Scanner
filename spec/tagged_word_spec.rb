@@ -16,9 +16,9 @@ module Style
       end
     end
 
-    context "#tokenized_word " do
+    context "#tokenized " do
       it "downcase and stripped of punctuation" do
-        subject.tokenized_word.should == "hounddog"
+        subject.tokenized.should == "hounddog"
       end
     end
 
