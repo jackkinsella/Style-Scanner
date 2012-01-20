@@ -2,7 +2,7 @@ module Style
   module SentenceScans
     class SpeakingInGeneralities < Base
 
-        GENERAL_WORDS = ["many", "various", "mostly", "largely",
+      GENERAL_WORDS = ["many", "various", "mostly", "largely",
         "huge", "a number", "significantly", "substantially",
         "vast", "relatively", "completely"]
 

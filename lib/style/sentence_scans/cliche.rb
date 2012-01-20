@@ -13,8 +13,8 @@ module Style
 
       def self.stemmed_cliches
         @@stemmed_cliches ||= CLICHES.map do |cliche| 
-            cliche.stem_verbs
-         end
+          cliche.stem_verbs
+        end
       end
 
     end

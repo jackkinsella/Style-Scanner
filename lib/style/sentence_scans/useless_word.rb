@@ -11,6 +11,7 @@ module Style
           create_problem(useless_word) if sentence.contains?(useless_word) 
         end
       end
+
     end
   end
 end

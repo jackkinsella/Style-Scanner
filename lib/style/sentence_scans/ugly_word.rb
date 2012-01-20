@@ -3,7 +3,7 @@ module Style
     class UglyWord < Base
 
       WORD_PAIRS= {"utilize" => "use", "necessitate" => "require", "leverage" => "use", "aforementioned" => "previous",
-      "transpire" => "happen", "thusly" => "thus", "whilst" => "while", "tackle" => "solve"}
+        "transpire" => "happen", "thusly" => "thus", "whilst" => "while", "tackle" => "solve"}
 
       def scan
         WORD_PAIRS.keys.each do |offender|

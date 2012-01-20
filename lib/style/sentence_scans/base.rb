@@ -43,7 +43,7 @@ module Style
       end
 
       def problem_class
-         Problems.const_get(self.class.to_s.gsub("Style::SentenceScans::", ""))
+        Problems.const_get(self.class.to_s.gsub("Style::SentenceScans::", ""))
       end
 
       def create_problem(offending_text)
