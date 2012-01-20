@@ -32,6 +32,12 @@ module Style
         tagged_words.at(tagged_words.index(word) + 1)
       end
 
+      def next_significant_word(word)
+        possible_word = next_word(word)
+        next_significant_word(possible_word) if word.adverb? 
+        possible_word
+      end
+
       def part_of_speech(code)
         tagged_words.select {|tagged_word| tagged_word.tag == code }.map &:word
       end
