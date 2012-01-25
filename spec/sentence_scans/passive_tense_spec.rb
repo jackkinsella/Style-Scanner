@@ -127,7 +127,6 @@ module Style
                   should_not_problem active_state_with_possessive, Problems::PassiveTense
                 end
 
-                "The devil is really in the details."
                 it "doesnt catch active state with adjective between" do
                   should_not_problem active_state_with_adverb, Problems::PassiveTense
                 end

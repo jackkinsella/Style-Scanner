@@ -18,7 +18,7 @@ the of and a to in is you that it he was for on are as with his they I at be thi
     end
 
     def adverb?
-      tag.start_with?("RBR")
+      tag.start_with?("RB")
     end
 
     def non_structural?
