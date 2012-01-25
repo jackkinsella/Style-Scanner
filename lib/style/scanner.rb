@@ -4,7 +4,7 @@ module Style
     attr_reader :input_text, :sentences, :options
     attr_accessor :finished_text
 
-    def initialize(input, options)
+    def initialize(input, options={})
       # remove html
       @options = options
       @input_text = convert_to_txt(input) 
