@@ -16,7 +16,7 @@ module Style
     end
 
     def contains?(word, options = {})
-      {:strip_case=> true}.merge(options)
+      options = {:strip_case=> true}.merge(options)
       text_to_scan = text
       text_to_scan = text_to_scan.downcase if options[:strip_case]
       text_to_scan = text_to_scan.stem_verbs if options[:stem_verbs]
