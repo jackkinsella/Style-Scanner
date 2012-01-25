@@ -53,11 +53,15 @@ See all command line options
 
 @style -h@
 
-By default some scans, such as the Adverb scan, are turned off. Use
-commond line options to enable them.
+By default some scans, such as the Adverb scan, are turned off. Use command line options to enable them.
 
 @style -a filename@ #scan for adverbs
 
+Scan HTML files
+@style filename.html -h@
+
+Scan Textile files
+@style filename.html -t@
 
 h2. Dependencies
 
