@@ -4,7 +4,7 @@ require File.expand_path('../lib/style/version', __FILE__)
 Gem::Specification.new do |gem|
   gem.authors       = ["Jack Kinsella"]
   gem.email         = ["jack.kinsella@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.description   = %q{Flag errors with your writing Style}
   gem.summary       = %q{Formal English Style Guide: Write more effectively}
   gem.homepage      = ""
 
