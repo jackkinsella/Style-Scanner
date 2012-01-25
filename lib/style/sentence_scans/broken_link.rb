@@ -10,7 +10,7 @@ module Style
             begin
               attempt_to_visit_url(url)
               # socket error occurs if link is bad
-            rescue SocketError
+            rescue SocketError, Errno::ECONNREFUSED
               create_problem("Url #{url} does not work")
             end
           end

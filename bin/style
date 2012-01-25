@@ -3,6 +3,8 @@ require "style"
 require 'trollop'
 options = Trollop::options do
   opt :adverb, "Scans for Adverbs", :default => false
+  opt :html, "HTML input", :default => false
+  opt :textile, "Textile input", :default => false
 end
 
 

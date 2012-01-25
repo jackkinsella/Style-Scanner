@@ -19,6 +19,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "colorize"
   gem.add_dependency "sanitize"
   gem.add_dependency "trollop"
+  gem.add_dependency "RedCloth"
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
   gem.add_development_dependency "ruby-debug19"

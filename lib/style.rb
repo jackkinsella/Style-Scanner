@@ -7,6 +7,7 @@ require "punkt-segmenter"
 require 'colorize'
 require "engtagger"
 require "sanitize"
+require 'redcloth'
 
 require "style/problems/base"
 require "style/sentence_scans/base"

@@ -7,9 +7,10 @@ module Style
     def initialize(input, options)
       # remove html
       @options = options
-      @input_text = Sanitize.clean(input)
+      @input_text = convert_to_txt(input) 
       @sentences = split_into_sentences
     end
+
 
     def scan 
       sentences.each do |sentence|
@@ -25,6 +26,24 @@ module Style
     end
 
     private
+
+    def convert_to_txt(input)
+      if options[:html] 
+        remove_html(input)
+      elsif options[:textile]
+        textile_to_txt(input)
+      else
+        input
+      end
+    end
+
+    def textile_to_txt(input)
+      remove_html(RedCloth.new(input).to_html)
+    end
+
+    def remove_html(input)
+      Sanitize.clean(input)
+    end
 
     def desired_scans 
       desired_optional_scans + default_scans
