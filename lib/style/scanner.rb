@@ -4,7 +4,7 @@ module Style
     attr_reader :input_text, :sentences
     attr_accessor :finished_text
 
-    def initialize(input)
+    def initialize(input, cli)
       # remove html
       @input_text = Sanitize.clean(input)
       @sentences = split_into_sentences
