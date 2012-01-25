@@ -23,7 +23,7 @@ module Style
         flag_lowercase(DAYS)
         flag_lowercase(NATIONALITIES)
         flag_uppercase(SEASONS)
-        create_problem(first_letter) if first_word_is_lowercase?
+        create_problem(first_letter) if first_letter_is_lowercase?
       end
 
       private
@@ -36,7 +36,7 @@ module Style
         first_word.word.chars.first
       end
 
-      def first_word_is_lowercase?
+      def first_letter_is_lowercase?
         first_letter != first_letter.upcase
       end
 
