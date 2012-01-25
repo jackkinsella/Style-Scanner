@@ -58,7 +58,7 @@ By default some scans, such as the Adverb scan, are turned off. Use command line
 @style -a filename@ #scan for adverbs
 
 Scan HTML files
-@style filename.html -h@
+@style filename.html --help@
 
 Scan Textile files
 @style filename.html -t@

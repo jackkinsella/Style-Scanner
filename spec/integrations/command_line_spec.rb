@@ -12,7 +12,7 @@ module Style
 
     it "calls the scanner when cmd line called with an echoed sentence" do
       # mispelling error should show
-      %x(echo '#{text}' | style).should match "dlog"
+      %x(echo '#{text}' | style -s).should match "dlog"
     end
 
     it "calls the scanner when cmd line called with a file" do
@@ -21,7 +21,7 @@ module Style
 
     it "works with HTML input" do
       # mispelling in html should not show if stripper properly
-      %x(echo '#{html}' | style -h).should_not match "dlog"
+      %x(echo '#{html}' | style -h -s).should_not match "dlog"
     end
 
     it "doesn't do adverbs by default" do
@@ -34,7 +34,7 @@ module Style
 
     it "works with Textile input" do
       # this test works because the software will visit the image link if the html is not stripped
-      %x(echo '#{textile}' | style -t).should_not match "dlog"
+      %x(echo '#{textile}' | style -t -s).should_not match "dlog"
     end
 
   end

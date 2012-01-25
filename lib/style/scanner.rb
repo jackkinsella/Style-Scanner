@@ -52,6 +52,7 @@ module Style
     def desired_optional_scans
       result = []
       result << SentenceScans::Adverb if options[:adverb]
+      result << SentenceScans::Spelling if options[:spellcheck]
       result
     end
 
@@ -65,7 +66,7 @@ module Style
     end
 
     def default_scans 
-      [SentenceScans::UselessWord, SentenceScans::UglyWord, SentenceScans::Spelling, SentenceScans::ConsecutivelyRepeatedWord,
+      [SentenceScans::UselessWord, SentenceScans::UglyWord, SentenceScans::ConsecutivelyRepeatedWord,
       SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink, SentenceScans::UsedWordAlreadyInSentence,
       SentenceScans::SpeakingInGeneralities, SentenceScans::Cliche, SentenceScans::PassiveTense, SentenceScans::Capitalization]
     end
