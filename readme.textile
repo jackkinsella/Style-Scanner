@@ -139,6 +139,11 @@ h2. Roadmap
 6 Refactor i.e. to use tokenized stuff.
 7 Refactor next word stuff.
 8 Tense switches
+9 Improve tests by:
+a Creating a sentence helper
+b Making a better Rspec match (more informative erros)
+c Automatically detecting the correct problem
+10 Strucutral words
 
 h2. Contributors
 

@@ -4,7 +4,7 @@ module Style
     describe Capitalization do
 
       let(:aids) {Sentence.new("John has aids.")}
-      let(:first_word) {Sentence.new("he went to the park.")}
+      let(:lowercase_first_word) {Sentence.new("he went to the park.")}
       let(:nationalities) {Sentence.new("We spoke english.")}
       let(:season) {Sentence.new("We travelled to England in the Summer.")}
       let(:month) {Sentence.new("We travelled to England in march.")}
@@ -21,7 +21,7 @@ module Style
         should_problem day, Problems::Capitalization
       end
       it "catches first word of sentences" do
-
+        should_problem lowercase_first_word, Problems::Capitalization
       end
       it "flags wrongly capitalized seasons" do
 

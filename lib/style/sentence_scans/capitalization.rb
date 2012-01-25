@@ -20,9 +20,22 @@ module Style
         flag_lowercase(MONTHS)
         flag_lowercase(ACRONYMS)
         flag_lowercase(DAYS)
+        create_problem(first_letter) if first_word_is_lowercase?
       end
 
       private
+
+      def first_word
+        tagged_words.first
+      end
+
+      def first_letter
+        first_word.word.chars.first
+      end
+
+      def first_word_is_lowercase?
+        first_letter != first_letter.upcase
+      end
 
       def flag_lowercase(collection)
         collection.each do |word|
