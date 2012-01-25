@@ -4,11 +4,11 @@ module Style
 
       REPEATED_WORD_REGEX = /\b(\w+)\b\s+\b\1\b/
 
-        def scan
-          consecutively_repeated_words.each do |repeated_word|
-            create_problem("#{repeated_word} #{repeated_word}")
-          end 
-        end
+      def scan
+        consecutively_repeated_words.each do |repeated_word|
+          create_problem("#{repeated_word} #{repeated_word}")
+        end 
+      end
 
       private
 
