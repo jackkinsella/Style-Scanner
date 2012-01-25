@@ -1,0 +1,185 @@
+afghans
+albanians
+algerians
+americans
+andorrans
+angolans
+argentines
+armenians
+aromanians
+arubans
+australians
+albanians
+algerians
+andorrans
+angolans
+argentines
+armenians
+aromanians
+arubans
+australians
+austrians
+azeris
+bahamians
+bahrainis
+bangladeshis
+barbadians
+belarusians
+belgians
+belizeans
+bermudians
+boers
+bosnians
+brazilians
+bretons
+britons
+british virgin islanders
+bulgarians
+burkinabès
+burundians
+cambodians
+cameroonians
+canadians
+catalans
+cape verdeans
+chadians
+chileans
+colombians
+comorians
+congolese
+croatians
+cubans
+cypriots
+turkish cypriots
+czechs
+danes
+dominicans
+dominicans
+dutch
+east timorese
+ecuadorians
+egyptians
+emiratis
+english
+eritreans
+estonians
+ethiopians
+finns
+finnish swedish
+fijians
+filipinos
+french citizens
+georgians
+germans
+baltic germans
+ghanaians
+gibraltar
+greeks
+grenadians
+guatemalans
+guianese
+guineans
+guinea-bissau nationals
+guyanese
+haitians
+hondurans
+hong kongers
+hungarians
+icelanders
+indians
+indonesians
+iranians 
+iraqis
+irish
+israelis
+italians
+ivoirians
+jamaicans
+japanese
+jordanians
+kazakhs
+kenyans
+koreans
+kosovo albanians
+kuwaitis
+lao
+latvians
+lebanese
+liberians
+libyans
+liechtensteiners
+lithuanians
+luxembourgers
+macedonians
+malawians
+malaysians
+maldivians
+malians
+maltese
+manx
+mauritians
+mexicans
+moldovans
+moroccans
+mongolians
+montenegrins
+mozambicans
+namibians
+nepalese
+new zealanders
+nicaraguans
+nigeriens
+nigerians
+norwegians
+pakistanis
+palauans
+palestinians
+panamanians
+papua new guineans
+paraguayans
+peruvians
+poles
+portuguese
+puerto ricans
+quebecers
+réunionnais
+romanians
+russians
+baltic russians
+rwandans
+salvadorans
+são tomé and príncipe
+saudis
+scots
+senegalese
+serbs
+sierra leoneans
+sikhs
+singaporeans
+slovaks
+slovenes
+somalis
+south africans
+spaniards
+sri lankans
+sudanese
+swedes
+swiss
+syrians
+taiwanese
+tanzanians
+thais
+tibetans
+tobagonians
+trinidadians
+turks
+tuvaluans
+ugandans
+ukrainians
+uruguayans
+venezuelans
+vietnamese
+welsh 
+yemenis
+zambians
+zimbabweans

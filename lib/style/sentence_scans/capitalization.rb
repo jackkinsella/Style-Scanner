@@ -3,6 +3,7 @@ module Style
     class Capitalization < Base
 
       ACRONYMS = load_file("acronyms.txt")
+      NATIONALITIES = load_file("nationalities.txt")
       MONTHS = %w(
      january february march april may june july august september october november december 
       )
@@ -20,6 +21,8 @@ module Style
         flag_lowercase(MONTHS)
         flag_lowercase(ACRONYMS)
         flag_lowercase(DAYS)
+        flag_lowercase(NATIONALITIES)
+        flag_uppercase(SEASONS)
         create_problem(first_letter) if first_word_is_lowercase?
       end
 
@@ -35,6 +38,13 @@ module Style
 
       def first_word_is_lowercase?
         first_letter != first_letter.upcase
+      end
+
+
+      def flag_uppercase(collection)
+        collection.each do |word|
+          create_problem(word.downcase) if sentence.contains?(word, :strip_case => false)
+        end
       end
 
       def flag_lowercase(collection)

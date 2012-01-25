@@ -5,7 +5,7 @@ module Style
 
       let(:aids) {Sentence.new("John has aids.")}
       let(:lowercase_first_word) {Sentence.new("he went to the park.")}
-      let(:nationalities) {Sentence.new("We spoke english.")}
+      let(:nationality) {Sentence.new("We spoke english.")}
       let(:season) {Sentence.new("We travelled to England in the Summer.")}
       let(:month) {Sentence.new("We travelled to England in march.")}
       let(:uppercase_month) {Sentence.new("We travelled to England in March.")}
@@ -24,10 +24,10 @@ module Style
         should_problem lowercase_first_word, Problems::Capitalization
       end
       it "flags wrongly capitalized seasons" do
-
+        should_problem season, Problems::Capitalization
       end
       it "catches nationalities and languages" do
-
+        should_problem nationality, Problems::Capitalization
       end
       it "catches acroynms" do
         should_problem aids, Problems::Capitalization
