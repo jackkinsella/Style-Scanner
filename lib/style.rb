@@ -1,12 +1,13 @@
-# internal dependencies
+# Ruby core dependencies
+require "net/http"
+require "forwardable"
 
-# external dependencies
+# External dependencies
 require "punkt-segmenter"
 require 'colorize'
 require "engtagger"
-require "net/http"
+require "sanitize"
 
-require "forwardable"
 
 require "style/problems/base"
 require "style/sentence_scans/base"
