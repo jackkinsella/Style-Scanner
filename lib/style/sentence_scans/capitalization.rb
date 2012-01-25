@@ -40,7 +40,6 @@ module Style
         first_letter != first_letter.upcase
       end
 
-
       def flag_uppercase(collection)
         collection.each do |word|
           create_problem(word.downcase) if sentence.contains?(word, :strip_case => false)
