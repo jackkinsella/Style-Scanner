@@ -131,6 +131,7 @@ h3. Parts of Speech
 
 h2. Roadmap
 
+1 Add more acronyms
 2 Refactor the collection methods.
 3 Capitalization issues -- global fix needed.
 4 More useless words.

@@ -7,10 +7,18 @@ module Style
       let(:first_word) {Sentence.new("he went to the park.")}
       let(:nationalities) {Sentence.new("We spoke english.")}
       let(:season) {Sentence.new("We travelled to England in the Summer.")}
-      let(:month) {Sentence.new("We travelled to England in March.")}
+      let(:month) {Sentence.new("We travelled to England in march.")}
+      let(:uppercase_month) {Sentence.new("We travelled to England in March.")}
+      let(:day) {Sentence.new "We arrive on wednesday"}
 
-      it "catches months" do
-
+      it "catches lowercase months" do
+        should_problem month, Problems::Capitalization
+      end
+      it "doesn't catch uppercase months" do
+        should_not_problem uppercase_month, Problems::Capitalization
+      end
+      it "catches days" do
+        should_problem day, Problems::Capitalization
       end
       it "catches first word of sentences" do
 
@@ -22,7 +30,7 @@ module Style
 
       end
       it "catches acroynms" do
-        should_problem aids, SentenceScans::Capitalization
+        should_problem aids, Problems::Capitalization
       end
 
       pending do
