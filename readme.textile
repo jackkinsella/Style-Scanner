@@ -49,6 +49,16 @@ Style is pipe friendly.
 
 @cat filename | style@
 
+See all command line options
+
+@style -h@
+
+By default some scans, such as the Adverb scan, are turned off. Use
+commond line options to enable them.
+
+@style -a filename@ #scan for adverbs
+
+
 h2. Dependencies
 
 h3. Gems
@@ -119,10 +129,7 @@ h3. Parts of Speech
   LRB     Punctuation, left bracket               (, {, [
   RRB     Punctuation, right bracket              ), }, ]
 
-
 h2. Roadmap
-
-0 Make faster using threading and staggered output 
 
 1 Handle HTML and textile files.
 2 Refactor the collection methods.

@@ -5,24 +5,21 @@ require 'mixlib/cli'
 class MyCLI
   include Mixlib::CLI
 
-  option :adverbs,
+  option :Adverb,
     :short => "-a",
     :long => "--adverb",
-    :description => "Check for adverbs",
+    :description => "Use this switch to scan for adverbs",
     :default => false,
-    :on => :tail,
     :boolean => true,
-    :show_options => true,
-    :exit => 0
+    :show_options => true
 
-  option :textile,
+  option :Textile,
     :short => "-t",
     :long => "--textile",
     :description => "The argument is a textile file",
     :on => :tail,
     :boolean => true,
-    :show_options => true,
-    :exit => 0
+    :show_options => true
 
 end
 
@@ -32,4 +29,5 @@ puts "\n\n"
 
 cli = MyCLI.new
 cli.parse_options
-Style::Scanner.new(ARGF.read, cli).scan
+options = cli.config
+Style::Scanner.new(ARGF.read, options).scan

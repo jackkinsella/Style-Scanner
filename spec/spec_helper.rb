@@ -1,5 +1,5 @@
 require 'rubygems'
-require "ruby-debug"
+require 'ruby-debug'
 require 'bundler/setup'
 # Use this when it's a full gem 
 require 'style'

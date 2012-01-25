@@ -8,7 +8,6 @@ require 'colorize'
 require "engtagger"
 require "sanitize"
 
-
 require "style/problems/base"
 require "style/sentence_scans/base"
 Dir[File.dirname(__FILE__) + '/**/*.rb'].each do |file|
