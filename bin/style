@@ -1,33 +1,13 @@
 #!/usr/bin/env ruby
 require "style"
-require 'mixlib/cli'
-
-class MyCLI
-  include Mixlib::CLI
-
-  option :Adverb,
-    :short => "-a",
-    :long => "--adverb",
-    :description => "Use this switch to scan for adverbs",
-    :default => false,
-    :boolean => true,
-    :show_options => true
-
-  option :Textile,
-    :short => "-t",
-    :long => "--textile",
-    :description => "The argument is a textile file",
-    :on => :tail,
-    :boolean => true,
-    :show_options => true
-
+require 'trollop'
+options = Trollop::options do
+  opt :adverb, "Scans for Adverbs", :default => false
 end
+
 
 puts "=> Scanning for spelling error and style problems. May take a minute.\n".green
 puts ["Problem Type".red, "Original Sentence".green, "Offending Word".yellow].join(" | ")
 puts "\n\n"
 
-cli = MyCLI.new
-cli.parse_options
-options = cli.config
 Style::Scanner.new(ARGF.read, options).scan

@@ -31,10 +31,9 @@ module Style
     end
 
     def desired_optional_scans
-      optional_scans.find_all do |scan_name|
-        switched_on = options.select {|k,v| v == true }
-        ! switched_on.grep(scan_name).empty?
-      end
+      result = []
+      result << SentenceScans::Adverb if options[:adverb]
+      result
     end
 
     def split_into_sentences
@@ -44,10 +43,6 @@ module Style
 
     def training_text
       File.read("#{File.dirname(__FILE__)}/english.pickle")
-    end
-
-    def optional_scans
-      [SentenceScans::Adverb]
     end
 
     def default_scans 
