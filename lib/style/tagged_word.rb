@@ -20,6 +20,14 @@ the of and a to in is you that it he was for on are as with his they I at be thi
     def adverb?
       tag.start_with?("RB")
     end
+    
+    def preposition?
+      tag.start_with?("IN")
+    end
+
+    def determiner?
+      tag.start_with?("DET")
+    end
 
     def non_structural?
       ! STRUCTURAL_WORDS.include?(word)
@@ -30,7 +38,7 @@ the of and a to in is you that it he was for on are as with his they I at be thi
     end
 
     def noun?
-      ["a", "the", "an"].include?(tokenized)
+      tag.start_with?("NN")
     end
 
     def be_verb?

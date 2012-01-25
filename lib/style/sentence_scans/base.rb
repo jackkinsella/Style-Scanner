@@ -34,7 +34,7 @@ module Style
 
       def next_significant_word(word)
         possible_word = next_word(word)
-        next_significant_word(possible_word) if word.adverb? 
+        return next_significant_word(possible_word) if possible_word.adverb? || possible_word.preposition? || possible_word.determiner?
         possible_word
       end
 
