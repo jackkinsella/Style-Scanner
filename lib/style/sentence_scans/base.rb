@@ -56,6 +56,15 @@ module Style
         sentence.add_problem(problem_class.new(sentence, offending_text)) unless already_has_that_problem_on_text(offending_text)
       end
 
+      class << self
+
+         def load_file(filename)
+           file_location = File.expand_path("../../../dictionaries/#{filename}", __FILE__)
+           IO.read(file_location).split("\n")
+         end
+
+      end
+
     end
   end
 end

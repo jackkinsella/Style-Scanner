@@ -67,7 +67,7 @@ module Style
     def default_scans 
       [SentenceScans::UselessWord, SentenceScans::UglyWord, SentenceScans::Spelling, SentenceScans::ConsecutivelyRepeatedWord,
       SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink, SentenceScans::UsedWordAlreadyInSentence,
-      SentenceScans::SpeakingInGeneralities, SentenceScans::Cliche, SentenceScans::PassiveTense]
+      SentenceScans::SpeakingInGeneralities, SentenceScans::Cliche, SentenceScans::PassiveTense, SentenceScans::Capitalization]
     end
 
   end
