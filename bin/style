@@ -1,14 +1,11 @@
 #!/usr/bin/env ruby
 require "style"
-require 'trollop'
 options = Trollop::options do
   opt :adverb, "Scans for Adverbs", :default => false
   opt :html, "HTML input", :default => false
   opt :textile, "Textile input", :default => false
   opt :spellcheck, "Spell check", :default => false
 end
-
-
 puts "=> Scanning for spelling error and style problems. May take a minute.\n".green
 puts ["Problem Type".red, "Original Sentence".green, "Offending Word".yellow].join(" | ")
 Style::Scanner.new(ARGF.read, options).scan
