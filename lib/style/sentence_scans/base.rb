@@ -24,26 +24,22 @@ module Style
       end
 
       def tokenized_words
-        tagged_words.map(&:tokenized).reject {|word| word == ""}
+        words.map(&:tokenized).reject {|word| word == ""}
       end
 
       # We retokenize for the text case where no overall scanner is prepared
-      def tagged_words
-        @tagged_words ||= Tagger.new(sentence.text).tagged_words
+      def words
+        sentence.tagged_words
       end
 
       def next_word(word)
-        tagged_words.at(tagged_words.index(word) + 1)
+        words.at(words.index(word) + 1)
       end
 
       def next_significant_word(word)
         possible_word = next_word(word)
         return next_significant_word(possible_word) if possible_word.adverb? || possible_word.preposition? || possible_word.determiner?
         possible_word
-      end
-
-      def part_of_speech(code)
-        tagged_words.select {|tagged_word| tagged_word.tag == code }.map &:word
       end
 
       def already_has_that_problem_on_text(offending_text)

@@ -4,16 +4,16 @@ module Style
 
       # heuristic: A "BE" verb follwed by a verb other than a gerund
       def scan
-        passive = tagged_words.find do |tagged_word|
-          tagged_word.be_verb? && (! next_word(tagged_word).gerund_verb? ) && (! state_word?(tagged_word)) 
+        passive = words.find do |word|
+          word.be_verb? && (! next_word(word).gerund_verb? ) && (! state_word?(word)) 
         end
-        create_problem(passive.word) if passive
+        create_problem(word.word) if passive
       end
 
       private
 
-      def state_word?(tagged_word)
-        word = next_significant_word(tagged_word)
+      def state_word?(word)
+        word = next_significant_word(word)
         word.noun? || word.possessive?
       end
 

@@ -21,10 +21,6 @@ module Style
       end
     end
 
-    def find_sentence(text)
-      @sentences.find {|sentence| sentence.text == text}
-    end
-
     private
 
     def convert_to_txt(input)

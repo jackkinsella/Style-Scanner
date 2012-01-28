@@ -11,7 +11,7 @@ module Style
       private
 
       def repeated_words 
-        tagged_words.select do |word|
+        words.select do |word|
           appears_more_than_twice(word) && word.non_structural? && appears_non_consecutively(word.tokenized) 
         end.uniq
       end

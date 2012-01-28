@@ -139,8 +139,6 @@ h2. Roadmap
 2 Refactor the collection methods.
 4 More useless words.
 5 Troublesome words from Stunk.
-6 Refactor i.e. to use tokenized stuff.
-7 Refactor next word stuff.
 8 Tense switches
 9 Improve tests by:
 a Creating a sentence helper

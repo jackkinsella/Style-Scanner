@@ -29,7 +29,7 @@ module Style
       private
 
       def first_word
-        tagged_words.first
+        words.first
       end
 
       def first_letter
