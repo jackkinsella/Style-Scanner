@@ -11,7 +11,7 @@ module Style
       private
 
       def adverbs
-        part_of_speech("RB")
+        sentence.adverbs
       end
 
     end

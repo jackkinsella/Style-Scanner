@@ -15,6 +15,14 @@ module Style
       @problems.select {|problem| problem.class == problem_type}
     end
 
+    def tagged_words
+      @tagged_words ||= Tagger.new(text).tagged_words
+    end
+
+    def adverbs
+      part_of_speech("RB")
+    end
+
     def contains?(word, options = {})
       options = {:strip_case=> true}.merge(options)
       text_to_scan = text
@@ -40,6 +48,10 @@ module Style
     end
 
     private
+
+    def part_of_speech(pos)
+      tagged_words.select {|tagged_word| tagged_word.tag == pos }.map(&:word)
+    end
 
     # we don't want to modify the original text
     def copy_of_text
