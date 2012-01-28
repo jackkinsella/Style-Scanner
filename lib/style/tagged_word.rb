@@ -2,8 +2,8 @@ module Style
   class TaggedWord
     #TODO add tests for all the new methods added here.
 
-      STRUCTURAL_WORDS = %{
-the of and a to in is you that it he was for on are as with his they I at be this have from or one had by but not what all were we when your can said there use an each which she do how their if will up other out then them these so some her would like him into has more no way could my than been who its did
+      STRUCTURAL_TAGS = %{
+        WRB WPS WP WDT UH TO SYM PRPS CC DET EX IN LS PDT POS PRP PRPS
       }
 
     attr_reader :tag, :word
@@ -30,7 +30,7 @@ the of and a to in is you that it he was for on are as with his they I at be thi
     end
 
     def non_structural?
-      ! STRUCTURAL_WORDS.include?(word)
+      ! STRUCTURAL_TAGS.include?(tag)
     end
 
     def possessive?

@@ -147,7 +147,6 @@ h2. Roadmap
 a Creating a sentence helper
 b Making a better Rspec match (more informative erros)
 c Automatically detecting the correct problem
-10 Structural words should be tag based
 11 Performance tests
 
 h2. Contributors
