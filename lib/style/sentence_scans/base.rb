@@ -23,6 +23,10 @@ module Style
         word_pairs[offending_word]
       end
 
+      def tokenized_words
+        tagged_words.map(&:tokenized).reject {|word| word == ""}
+      end
+
       # We retokenize for the text case where no overall scanner is prepared
       def tagged_words
         @tagged_words ||= Tagger.new(sentence.text).tagged_words

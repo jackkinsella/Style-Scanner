@@ -61,10 +61,6 @@ module Style
       tokenizer.sentences_from_text(input_text, :output => :sentences_text).map {|text| Sentence.new(text)}
     end
 
-    def training_text
-      File.read("#{File.dirname(__FILE__)}/english.pickle")
-    end
-
     def default_scans 
       [SentenceScans::UselessWord, SentenceScans::UglyWord, SentenceScans::ConsecutivelyRepeatedWord,
       SentenceScans::ExcessWhiteSpace, SentenceScans::BrokenLink, SentenceScans::UsedWordAlreadyInSentence,
