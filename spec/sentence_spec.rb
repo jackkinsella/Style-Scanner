@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   describe Sentence do
     let(:text) {"Christmas shopping shopping for a very big dinosaur."}
     let(:repeated_word_problem) {Problems::ConsecutivelyRepeatedWord.new("shopping shopping", text)}

@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
     module SentenceScans
         describe InappropriateContraction do
             let(:dont) {Sentence.new "we don't look out."}

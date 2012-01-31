@@ -4,7 +4,7 @@ require 'bundler/setup'
 # Use this when it's a full gem 
 require 'style'
 
-module StyleTestingHelpers
+module StyleScannerTestingHelpers
 
   def should_problem(sentence, problem_type, offending_text=nil)
     subject = described_class.new(sentence)
@@ -22,5 +22,5 @@ module StyleTestingHelpers
 end
 
 RSpec.configure do |config|
-  config.include(StyleTestingHelpers)
+  config.include(StyleScannerTestingHelpers)
 end

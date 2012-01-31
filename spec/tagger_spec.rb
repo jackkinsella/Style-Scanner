@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   describe Tagger do
     let(:input) {"I am a wicked child."}
 

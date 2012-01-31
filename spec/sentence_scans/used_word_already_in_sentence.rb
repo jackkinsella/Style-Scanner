@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   module SentenceScans
     describe UsedWordAlreadyInSentence do
       let(:double_nice) {Sentence.new "It was a nice place, and all the people were nice."}

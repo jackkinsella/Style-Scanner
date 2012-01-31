@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   module SentenceScans
     describe ExcessWhiteSpace do
       let(:space_before_stop) {Sentence.new "I ran ."}

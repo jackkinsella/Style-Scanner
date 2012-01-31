@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   # make sure each example only has one grammatical error
 
   describe Scanner do

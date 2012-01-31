@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   module SentenceScans
     describe UselessWord do
       let(:very) {Sentence.new "It was a very good idea."}

@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   module SentenceScans
     # using examples from: http://www.ego4u.com/en/cram-up/grammar/passive
     describe PassiveTense do

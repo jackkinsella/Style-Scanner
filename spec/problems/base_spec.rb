@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   module Problems 
     describe Base do
       let(:sentence) {Sentence.new("I really like tomatoes.")}

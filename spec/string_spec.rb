@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
   describe String do
     context "#strip_punctuation" do
       let(:string_with_dot) {"He isn't that furry."}

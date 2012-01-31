@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
     module SentenceScans
         describe LatinAbbreviation do
             let(:ie) {Sentence.new "You should not have laughed at him, i.e. he gets angry quickly."}

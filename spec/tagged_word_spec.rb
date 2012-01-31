@@ -1,5 +1,5 @@
 require 'spec_helper'
-module Style
+module StyleScanner
   describe TaggedWord do
 
     subject {TaggedWord.new("nn", "Hound-dog")}

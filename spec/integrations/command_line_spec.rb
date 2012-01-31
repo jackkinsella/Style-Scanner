@@ -1,6 +1,6 @@
 # coding: utf-8
 require "spec_helper"
-module Style
+module StyleScanner
   describe "Command Line Interface" do
 
     let(:text) {"Tom hit the dlog."}

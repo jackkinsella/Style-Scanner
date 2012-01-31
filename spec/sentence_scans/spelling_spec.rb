@@ -1,5 +1,5 @@
 require "spec_helper"
-module Style
+module StyleScanner
     module SentenceScans
         describe Spelling do
 
