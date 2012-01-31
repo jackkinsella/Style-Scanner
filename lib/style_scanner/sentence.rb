@@ -1,4 +1,4 @@
-module Style
+module StyleScanner
   class Sentence 
     
     extend Forwardable

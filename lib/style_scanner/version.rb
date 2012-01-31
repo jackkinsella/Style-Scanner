@@ -1,3 +1,3 @@
-module Style
+module StyleScanner
   VERSION = "0.0.3"
 end

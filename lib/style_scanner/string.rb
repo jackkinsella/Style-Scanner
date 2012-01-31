@@ -1,4 +1,4 @@
-module Style
+module StyleScanner
   # Module is used to help people trace where the monkey patched methods came from http://olabini.com/blog/2011/01/safeer-monkey-patching/
   module StringExtensions
 

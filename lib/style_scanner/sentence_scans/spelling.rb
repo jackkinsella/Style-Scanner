@@ -1,4 +1,4 @@
-module Style
+module StyleScanner
   module SentenceScans
     class Spelling < Base
       # notice the way you don't give hunspell any specific file so much

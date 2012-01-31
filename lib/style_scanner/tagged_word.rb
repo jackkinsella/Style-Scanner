@@ -1,4 +1,4 @@
-module Style
+module StyleScanner
   class TaggedWord
     #TODO add tests for all the new methods added here.
 

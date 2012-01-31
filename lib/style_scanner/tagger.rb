@@ -1,4 +1,4 @@
-module Style
+module StyleScanner
   class Tagger
 
     attr_reader :input_text

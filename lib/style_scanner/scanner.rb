@@ -1,4 +1,4 @@
-module Style
+module StyleScanner
   class Scanner 
 
     attr_reader :input_text, :sentences, :options

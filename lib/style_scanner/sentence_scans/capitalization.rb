@@ -1,4 +1,4 @@
-module Style
+module StyleScanner
   module SentenceScans
     class Capitalization < Base
 
