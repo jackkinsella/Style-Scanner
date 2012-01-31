@@ -6,7 +6,7 @@ Gem::Specification.new do |gem|
   gem.email         = ["jack.kinsella@gmail.com"]
   gem.description   = %q{Flag errors with your writing Style}
   gem.summary       = %q{Formal English Style Guide: Write more effectively}
-  gem.homepage      = ""
+  gem.homepage      = "http://www.jackkinsella.ie"
 
   gem.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   gem.files         = `git ls-files`.split("\n")
@@ -20,9 +20,11 @@ Gem::Specification.new do |gem|
   gem.add_dependency "sanitize"
   gem.add_dependency "trollop"
   gem.add_dependency "RedCloth"
+
   gem.add_development_dependency "rspec"
   gem.add_development_dependency "rake"
   gem.add_development_dependency "ruby-debug19"
   gem.add_development_dependency "looksee"
   gem.add_development_dependency "ruby-prof"
+
 end
