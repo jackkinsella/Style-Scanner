@@ -1,5 +1,5 @@
 # coding: utf-8
-module Style
+module StyleScanner
   module Problems
     class Base
       attr_reader :offending_text, :sentence
