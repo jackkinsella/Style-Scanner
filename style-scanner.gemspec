@@ -1,5 +1,5 @@
 # -*- encoding: utf-8 -*-
-require File.expand_path('../lib/style/version', __FILE__)
+require File.expand_path('../lib/style_scanner/version', __FILE__)
 
 Gem::Specification.new do |gem|
   gem.authors       = ["Jack Kinsella"]
@@ -13,7 +13,7 @@ Gem::Specification.new do |gem|
   gem.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   gem.name          = "style-scanner"
   gem.require_paths = ["lib"]
-  gem.version       = Style::VERSION
+  gem.version       = StyleScanner::VERSION
   gem.add_dependency "punkt-segmenter"
   gem.add_dependency "engtagger"
   gem.add_dependency "colorize"
