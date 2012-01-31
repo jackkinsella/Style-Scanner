@@ -20,7 +20,7 @@ module StyleScanner
       private
 
       def problem_name
-        unformatted_name = self.class.to_s.gsub(/Style::Problems::/,"").titlecase
+        unformatted_name = self.class.to_s.gsub(/StyleScanner::Problems::/,"").titlecase
         return "Cliché" if unformatted_name == "Cliche"
         unformatted_name
       end

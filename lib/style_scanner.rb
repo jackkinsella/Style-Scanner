@@ -10,8 +10,8 @@ require "sanitize"
 require 'redcloth'
 require 'trollop'
 
-require "style/problems/base"
-require "style/sentence_scans/base"
+require "style_scanner/problems/base"
+require "style_scanner/sentence_scans/base"
 Dir[File.dirname(__FILE__) + '/**/*.rb'].each do |file|
   require file
 end
