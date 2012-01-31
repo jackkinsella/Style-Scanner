@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "style-scanner"
+require "style_scanner"
 options = Trollop::options do
   opt :adverb, "Scans for Adverbs", :default => false
   opt :html, "HTML input", :default => false
