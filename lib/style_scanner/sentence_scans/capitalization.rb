@@ -48,7 +48,7 @@ module StyleScanner
 
       def flag_lowercase(collection)
         collection.each do |word|
-          create_problem(word.upcase) if sentence.contains?(word, :strip_case => false)
+          create_problem(word.capitalize) if sentence.contains?(word, :strip_case => false)
         end
       end
 
