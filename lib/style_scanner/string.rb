@@ -16,6 +16,10 @@ module StyleScanner
       scan(/[A-Z][a-z]*/).join(" ") 
     end
 
+    def stemmed_verbs?
+      @stemmed_verbs
+    end 
+
     private
 
     def is_a_verb?(word)

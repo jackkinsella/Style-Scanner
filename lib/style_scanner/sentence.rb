@@ -23,11 +23,11 @@ module StyleScanner
       part_of_speech("RB")
     end
 
-    def contains?(word, options = {})
-      options = {:strip_case=> true}.merge(options)
+    def contains?(word, option_modifications = {})
+      options = {:strip_case => true}.merge(option_modifications)
       text_to_scan = text
       text_to_scan = text_to_scan.downcase if options[:strip_case]
-      text_to_scan = text_to_scan.stem_verbs if options[:stem_verbs]
+      text_to_scan = stemmed_verbs(text_to_scan) if options[:stem_verbs]
       text_to_scan.match /\b#{word}\b/
     end
 
@@ -51,6 +51,10 @@ module StyleScanner
 
     def part_of_speech(pos)
       tagged_words.select {|tagged_word| tagged_word.tag == pos }.map(&:word)
+    end
+
+    def stemmed_verbs(text)
+      @stemmed_verbs ||= text.stem_verbs
     end
 
     def tagger
