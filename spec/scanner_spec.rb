@@ -7,12 +7,6 @@ module StyleScanner
     let(:text) { "My name is Roboticus. I am a really powerful robot." }
     subject {Scanner.new(text)}
 
-    it "#find_sentence" do
-      text = "Sentence Number 1. Sentence Number 2"
-      sentence = Scanner.new(text).find_sentence("Sentence Number 2")
-      sentence.text.should == "Sentence Number 2"
-    end
-
     context "#scan" do
       it "calls a variety of scans on its sentences" do
         SentenceScans::UselessWord.should_receive(:scan).with(an_instance_of(Sentence)).twice.and_return(double(:sentence))
@@ -29,13 +23,6 @@ module StyleScanner
         last_sentence.text.split.first.should == "I"
       end
     end
-
-    context "unclosed parenthesis"
-    context "uncapitalized starting lines"
-    context "forgotten full stop"
-    context "overused words"
-    context "long words"
-    context "passive tense" 
 
   end
 end
