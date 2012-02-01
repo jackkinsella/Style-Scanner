@@ -8,7 +8,7 @@ module StyleScanner
     end
 
     def tagged_words 
-      Tagger.parts_of_speech_tagger.
+      @tagged_words ||= Tagger.parts_of_speech_tagger.
         add_tags(input_text).
         scan(/\<(?<tag>\w+)>(?<text>[^(<\)]+)</).
         map {|tag, word| TaggedWord.new(tag,word)}

@@ -11,6 +11,7 @@ coverage
 doc/
 lib/bundler/man
 log/*
+performance_report.html
 pkg
 rdoc
 spec/reports

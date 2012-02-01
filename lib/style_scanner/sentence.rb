@@ -16,7 +16,7 @@ module StyleScanner
     end
 
     def tagged_words
-      @tagged_words ||= Tagger.new(text).tagged_words
+      tagger.tagged_words
     end
 
     def adverbs
@@ -51,6 +51,10 @@ module StyleScanner
 
     def part_of_speech(pos)
       tagged_words.select {|tagged_word| tagged_word.tag == pos }.map(&:word)
+    end
+
+    def tagger
+      @tagger ||= Tagger.new(text)
     end
 
     # we don't want to modify the original text

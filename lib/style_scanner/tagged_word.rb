@@ -2,9 +2,9 @@ module StyleScanner
   class TaggedWord
     #TODO add tests for all the new methods added here.
 
-      STRUCTURAL_TAGS = %{
-        WRB WPS WP WDT UH TO SYM PRPS CC DET EX IN LS PDT POS PRP PRPS
-      }
+    STRUCTURAL_TAGS = %{
+      WRB WPS WP WDT UH TO SYM PRPS CC DET EX IN LS PDT POS PRP PRPS
+    }
 
     attr_reader :tag, :word
 
