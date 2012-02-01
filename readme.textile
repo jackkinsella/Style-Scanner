@@ -1,6 +1,7 @@
-h1. Style
+h1. Style-Scanner
 
-Style, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk and White, Bill Bryson and George Orwell, Style scans your text and markup files then lists issues found. Currently it spots the following problems:
+Style-Scanner, written by Jack Kinsella
+("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk and White, Bill Bryson and George Orwell, Style-Scanner scans your text and markup files then lists issues found. Currently it spots the following problems:
 
 * *Use of 600 different clichés*
   He pushed the envelope
@@ -25,27 +26,28 @@ We went to the the shopping centre.
 * *Excess white space*
 We went   to the shopping centre.
 
-_Linguistic analysis is a hard problem, so you cannot expect perfect results. Think of Style as guidelines to steer you in the right direction._
+_Linguistic analysis is a hard problem, so you cannot expect perfect
+results. Think of Style-Scanner as guidelines to steer you in the right direction._
 
 h2. Installation 
 
-Install Style using Ruby gems:
+Install Style-Scanner using Ruby gems:
 
 @gem install style-scanner@
 
-Next install Hunspell, an open source spell-checker that Style depends upon.
+Next install Hunspell, an open source spell-checker that Style-Scanner depends upon.
 
 @brew install hunspell@
 
 h2. Usage
 
-Style is command line only. Cd into the directory with the files you'd like to scan, then type 
+Style-Scanner is command line only. Cd into the directory with the files you'd like to scan, then type 
 
 @style-scanner filename@
 
-After a few seconds Style will print a list problems it finds.
+After a few seconds Style-Scanner will print a list problems it finds.
 
-Style is pipe friendly. 
+Style-Scanner is pipe friendly. 
 
 @cat filename | style-scanner@
 
@@ -153,5 +155,5 @@ Robert Dooley, developer in Galway Western, Ireland
 
 h2. Licence
 
-Style is released under the "MIT license":www.opensource.org/licenses/MIT
+Style-Scanner is released under the "MIT license":www.opensource.org/licenses/MIT
 Copyright "Jack Kinsella":www.jackkinsella.ie
