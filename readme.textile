@@ -31,7 +31,7 @@ h2. Installation
 
 Install Style using Ruby gems:
 
-@gem install style@
+@gem install style-scanner@
 
 Next install Hunspell, an open source spell-checker that Style depends upon.
 
@@ -41,27 +41,27 @@ h2. Usage
 
 Style is command line only. Cd into the directory with the files you'd like to scan, then type 
 
-@style filename@
+@style-scanner filename@
 
 After a few seconds Style will print a list problems it finds.
 
 Style is pipe friendly. 
 
-@cat filename | style@
+@cat filename | style-scanner@
 
 See all command line options
 
-@style -h@
+@style-scanner -h@
 
 By default some scans, such as the Adverb scan, are turned off. Use command line options to enable them.
 
-@style -a filename@ #scan for adverbs
+@style-scanner -a filename@ #scan for adverbs
 
 Scan HTML files
-@style filename.html --help@
+@style-scanner filename.html --help@
 
 Scan Textile files
-@style filename.html -t@
+@style-scanner filename.html -t@
 
 h2. Dependencies
 
