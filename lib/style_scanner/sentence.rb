@@ -27,7 +27,7 @@ module StyleScanner
       options = {:strip_case => true}.merge(option_modifications)
       text_to_scan = text
       text_to_scan = stemmed_verbs if options[:stem_verbs]
-      text_to_scan.downcase! if options[:strip_case]
+      text_to_scan = text_to_scan.downcase if options[:strip_case]
       text_to_scan.match /\b#{word}\b/
     end
 

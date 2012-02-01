@@ -11,7 +11,6 @@ module StyleScanner
       @sentences = split_into_sentences
     end
 
-
     def scan 
       sentences.each do |sentence|
         desired_scans.each do |scanner_type|
