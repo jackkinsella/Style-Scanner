@@ -1,7 +1,6 @@
 h1. Style-Scanner
 
-Style-Scanner, written by Jack Kinsella
-("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk and White, Bill Bryson and George Orwell, Style-Scanner scans your text and markup files then lists issues found. Currently it spots the following problems:
+Style-Scanner, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk and White, Bill Bryson and George Orwell, Style-Scanner scans your text and markup files then lists issues found. Currently it spots the following problems:
 
 * *Use of 600 different clichés*
   He pushed the envelope
@@ -25,9 +24,11 @@ addd
 We went to the the shopping centre.
 * *Excess white space*
 We went   to the shopping centre.
+* *Capitalization Problems*
+On monday we will have an exam.
 
-_Linguistic analysis is a hard problem, so you cannot expect perfect
-results. Think of Style-Scanner as guidelines to steer you in the right direction._
+
+_Linguistic analysis is a hard problem, so you cannot expect perfect results. Think of Style-Scanner as guidelines to steer you in the right direction. *Remember at best prescriptive stylistic guides can bring you up to a B minus standard of writing. * Anything more is beyond the scope of this tool._
 
 h2. Installation 
 
@@ -77,6 +78,12 @@ Formats terminal output in red,green and other colours.
 
 "entagger":http://engtagger.rubyforge.org/
 Assigns parts of speech tags to English text based on a lookup dictionary and a set of probability values.
+
+"RedCloth":http://redcloth.org/
+Converts Textile to HTML
+
+"Sanitize":https://github.com/rgrove/sanitize
+Converts HTML to plain text
 
 h3. Other
 
@@ -144,9 +151,11 @@ h2. Roadmap
 8 Tense switches
 9 Improve tests by:
 a Creating a sentence helper
-b Making a better Rspec match (more informative erros)
+b Making a better Rspec matcher (more informative erros)
 c Automatically detecting the correct problem
-11 Performance tests
+10 Desktop app
+11 Globalize spell check
+12 Most useful words
 
 h2. Contributors
 
