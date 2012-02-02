@@ -97,7 +97,7 @@ Contribution is welcomed and encouraged, although no modifications will be accep
 h3. Parts of Speech
 
 | Tag | Part Of Speech | Examples |
-|CC      | Conjunction, coordinating |              | and, or |
+|CC      | Conjunction, coordinating | and, or |
 | CD      | Adjective, cardinal number              | 3, fifteen |
 | DET     | Determiner                              | this, each, some |
 |EX|        Pronoun, existential there             |there |
