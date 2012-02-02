@@ -29,7 +29,9 @@ module StyleScanner
 
     def self.problem_class_names_from_dir
       Dir[(File.dirname(__FILE__) + "/../sentence_scans/*.rb")].
-        map {|filename| File.basename(filename, ".rb").split("_").map(&:capitalize).join } - ["Base"]
+      map {|filename| File.basename(filename, ".rb").
+      split("_").
+      map(&:capitalize).join } - ["Base"]
     end
 
     def self.dynamically_generate_problem_classes

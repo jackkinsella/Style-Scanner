@@ -1,8 +1,8 @@
+require 'ruby-prof'
 module StyleScanner
   module ProfilingHelpers
 
     def start_profiling
-      require 'ruby-prof'
       RubyProf.start
     end
 

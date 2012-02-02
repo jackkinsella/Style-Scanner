@@ -19,6 +19,7 @@ module StyleScanner
       def parts_of_speech_tagger
         @eng_tagger ||= EngTagger.new
       end
+
     end
 
   end
