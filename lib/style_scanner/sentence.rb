@@ -28,7 +28,7 @@ module StyleScanner
       text_to_scan = text
       text_to_scan = stemmed_verbs if options[:stem_verbs]
       text_to_scan = text_to_scan.downcase if options[:strip_case]
-      text_to_scan.match /\b#{word}\b/
+      text_to_scan.match(/\b#{word}\b/) 
     end
 
     def user_friendly_readout

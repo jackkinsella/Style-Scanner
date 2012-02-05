@@ -16,7 +16,7 @@ module StyleScanner
     end
 
     it "calls the scanner when cmd line called with a file" do
-      %x(style '#{file}').should match "cliché"
+      %x(style-scanner '#{file}').should match "cliché"
     end
 
     it "works with HTML input" do

@@ -8,7 +8,7 @@ module StyleScanner
 
     def stem_verbs
       strip_punctuation.split.map do |word|
-        is_a_verb?(word) ? word.stem : word
+        word.verb? ? word.stem : word
       end.join(" ")
     end
 
@@ -20,14 +20,12 @@ module StyleScanner
       @stemmed_verbs
     end 
 
-    private
-
-    def is_a_verb?(word)
-      tag(word).start_with?("V")
+    def verb?
+      tag.start_with?("V")
     end
 
-    def tag(word)
-      Tagger.new(self).tagged_words.find {|tagged_word| tagged_word.word == word}.tag
+    def tag
+      Tagger.new(self).tagged_words.find {|tagged_word| tagged_word.word == self }.tag
     rescue NoMethodError
       "Unknown"
     end

@@ -18,7 +18,9 @@ module StyleScanner
       )
 
       def scan
-        flag_lowercase(MONTHS)
+        flag_lowercase(MONTHS) do |word|
+          word == "may" && word.verb?
+        end
         flag_lowercase(ACRONYMS)
         flag_lowercase(DAYS)
         flag_lowercase(NATIONALITIES)
@@ -41,14 +43,22 @@ module StyleScanner
       end
 
       def flag_uppercase(collection)
-        collection.each do |word|
-          create_problem(word.downcase) if sentence.contains?(word, :strip_case => false)
-        end
+        flag_case_problem(collection, :downcase)
       end
 
-      def flag_lowercase(collection)
-        collection.each do |word|
-          create_problem(word.capitalize) if sentence.contains?(word, :strip_case => false)
+      def flag_lowercase(collection, &skipping_conditions)
+        flag_case_problem(collection, :capitalize, &skipping_conditions)
+      end
+
+      def flag_case_problem(collection, problem_case, &skipping_conditions)
+        words.each do |word|
+        # skip if the proc, when called with the tagged word, evaluates to true
+          next if skipping_conditions && skipping_conditions.call(word)
+
+          collection.each do |capitalization_word| 
+            create_problem(capitalization_word.send problem_case) if sentence.contains?(capitalization_word, :strip_case => false) && word == capitalization_word
+          end
+
         end
       end
 

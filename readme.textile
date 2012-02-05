@@ -1,6 +1,6 @@
 h1. Style-Scanner
 
-Style-Scanner, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skunk and White, Bill Bryson and George Orwell, Style-Scanner scans your text and markup files then lists issues found. Currently it spots the following problems:
+Style-Scanner, written by Jack Kinsella ("blog":http://www.jackkinsella.ie), helps you improve your English language writing. Based on stylistic advice given by authors such as Skrunk and White, Bill Bryson and George Orwell, Style-Scanner scans your text and markup files then lists issues found. Currently it spots the following problems:
 
 * *Use of 600 different clichés*
   He pushed the envelope
@@ -27,8 +27,8 @@ We went   to the shopping centre.
 * *Capitalization Problems*
 On monday we will have an exam.
 
-
-_Linguistic analysis is a hard problem, so you cannot expect perfect results. Think of Style-Scanner as guidelines to steer you in the right direction. *Remember at best prescriptive stylistic guides can bring you up to a B minus standard of writing. * Anything more is beyond the scope of this tool._
+_Linguistic analysis is a hard problem, so you cannot expect perfect results. Think of Style-Scanner as guidelines to alert you of
+possible faults. *Remember at best prescriptive stylistic guides can bring you up to a B minus standard of writing. * Anything more is beyond the scope of this tool._
 
 h2. Installation 
 
@@ -155,7 +155,9 @@ b Making a better Rspec matcher (more informative erros)
 c Automatically detecting the correct problem
 10 Desktop app
 11 Globalize spell check
-12 Most useful words
+12 Most overused words
+13 Suggestions for synonyms
+14 Code overview screencast
 
 h2. Contributors
 

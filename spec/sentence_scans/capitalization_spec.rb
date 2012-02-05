@@ -9,6 +9,8 @@ module StyleScanner
       let(:season) {Sentence.new("We travelled to England in the Summer.")}
       let(:month) {Sentence.new("We travelled to England in march.")}
       let(:uppercase_month) {Sentence.new("We travelled to England in March.")}
+      let(:may_month) {Sentence.new("Reaching deals with Indian bureaucrats and Chinese mandarins set to defend the interests and the data of their countries rapidly growing online firms may be downright impossible.")}
+      let(:may_verb) {Sentence.new "Reaching deals may be impossible."}
       let(:day) {Sentence.new "We arrive on wednesday"}
 
       it "catches lowercase months" do
@@ -25,6 +27,12 @@ module StyleScanner
       end
       it "flags wrongly capitalized seasons" do
         should_problem season, Problems::Capitalization
+      end
+      it "flags may month lowercase" do
+        should_problem may_month, Problems::Capitalization
+      end
+      it "does not flay may the verb" do
+        should_not_problem may_verb, Problems::Capitalization
       end
       it "catches nationalities and languages" do
         should_problem nationality, Problems::Capitalization

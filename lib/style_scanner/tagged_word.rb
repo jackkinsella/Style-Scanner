@@ -13,6 +13,10 @@ module StyleScanner
       @word = word 
     end
 
+    def ==(string)
+      word == string
+    end
+
     def tokenized
       word.downcase.gsub(/\W/, "")
     end
@@ -46,7 +50,8 @@ module StyleScanner
     end
 
     def verb?
-      tag.start_with?("V")
+      # account for modal verbs like may
+      tag.start_with?("V") || tag == "MD"
     end
 
     # Gerund verb = ING verb
