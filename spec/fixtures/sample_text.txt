@@ -1,2 +1,18 @@
-Making a cliché scanner is easier said than done. The devil is really in
-the details. We worked balls to the wall to get this working.
+Many people think that working on your language style is unimporant.
+I disagree. I prefer to use language instead of utilizing it.
+
+Good communication is easier said than done. An important point in good English language usuage is using English instead of Latin or French. E.g. Outside of academic contexts where space is in short supply it sounds pretentious to write e.g. instead of for example.
+
+I commonly make writing errors which can be spotted mechanically. For instance I   have  too much whitespace. I might might repeat a word
+twice in a row, by accident. I may use a fantastic adjective twice in the same fanstastic sentence without knowing it. I might make mistakes
+with capitalization, especially when I'm tired on a monday.  
+
+Sometimes I use words that add very little to a sentence. And sometimes sentences are written in a passive tense, robbing them of their verbal punch and concission.
+
+Style-Scanner is my solution. It's far from finished, but I'd invite any
+interested language hackers to participate. 
+
+Jack Kinsella
+Founder Bolivian Express
+Founder Oxbridge Notes
+Twitter @jackkinsella
